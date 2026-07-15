@@ -1,0 +1,369 @@
+/* ================================
+        CAPÍTULO FINAL
+================================ */
+
+#capitulo-final {
+  background: #fff;
+  padding: 120px 0 180px;
+}
+
+/* CAPÍTULO FINAL */
+
+.final-capitulo {
+  min-height: 45vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.final-capitulo p {
+  font-size: 30px;
+  letter-spacing: 12px;
+  color: #9b7b42;
+  text-transform: uppercase;
+}
+
+/* FRASES */
+
+.final-frase {
+  min-height: 60vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 40px;
+}
+
+.final-frase h2 {
+  font-size: 58px;
+  line-height: 80px;
+  max-width: 900px;
+  text-align: center;
+  color: #333;
+}
+
+/* FOTO */
+
+.final-foto {
+  min-height: 85vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.final-foto img {
+  width: 750px;
+  max-width: 90%;
+
+  border-radius: 25px;
+
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.18);
+}
+
+/* DATAS */
+
+.final-datas {
+  min-height: 30vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 30px;
+
+  font-size: 34px;
+  color: #444;
+}
+
+.final-linha {
+  width: 220px;
+  height: 3px;
+  background: #d4af37;
+}
+
+/* TEXTO FINAL */
+
+.final-dias {
+  min-height: 45vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  font-size: 42px;
+  line-height: 70px;
+
+  color: #555;
+}
+
+/* PRÓXIMO CAPÍTULO */
+
+.final-proximo {
+  min-height: 45vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.final-proximo h1 {
+  font-size: 60px;
+  color: #222;
+}
+
+/* LIVRO */
+
+.final-livro {
+  min-height: 70vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.final-folha {
+  width: 700px;
+  max-width: 90%;
+
+  background: #fff;
+
+  padding: 60px;
+
+  border-radius: 25px;
+
+  border: 1px solid rgba(212, 175, 55, 0.25);
+
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+
+  text-align: center;
+}
+
+.final-folha h2 {
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+
+.final-folha p {
+  font-size: 24px;
+  line-height: 42px;
+  color: #555;
+}
+
+.final-barra {
+  width: 100%;
+  height: 14px;
+
+  background: #ececec;
+
+  border-radius: 30px;
+
+  overflow: hidden;
+
+  margin: 35px 0;
+}
+
+.final-progresso {
+  width: 5%;
+  height: 100%;
+
+  background: linear-gradient(90deg, #d4af37, #f3d36d, #d4af37);
+}
+
+/* BOTÃO */
+
+.final-virar {
+  min-height: 40vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#virarPagina {
+  padding: 22px 65px;
+
+  border: none;
+
+  border-radius: 50px;
+
+  font-size: 26px;
+
+  cursor: pointer;
+
+  color: white;
+
+  background: linear-gradient(135deg, #d4af37, #b8872d);
+
+  box-shadow: 0 15px 35px rgba(212, 175, 55, 0.35);
+
+  transition: 0.35s;
+}
+
+#virarPagina:hover {
+  transform: translateY(-5px) scale(1.05);
+
+  box-shadow: 0 20px 45px rgba(212, 175, 55, 0.45);
+}
+
+/* ANIMAÇÃO */
+
+.final-reveal {
+  opacity: 0;
+
+  transform: translateY(80px);
+
+  transition: 1.2s ease;
+}
+
+.final-reveal.ativo {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+#futuro {
+  position: relative;
+}
+
+#futuro::after {
+  content: "";
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 180px;
+
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff);
+
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  #capitulo-final {
+    padding: 70px 0 100px;
+  }
+
+  /* Capítulo */
+
+  .final-capitulo {
+    min-height: 30vh;
+  }
+
+  .final-capitulo p {
+    font-size: 18px;
+    letter-spacing: 6px;
+    text-align: center;
+  }
+
+  /* Frases */
+
+  .final-frase {
+    min-height: 40vh;
+    padding: 25px;
+  }
+
+  .final-frase h2 {
+    font-size: 34px;
+    line-height: 48px;
+  }
+
+  /* Foto */
+
+  .final-foto {
+    min-height: 55vh;
+    padding: 20px;
+  }
+
+  .final-foto img {
+    width: 92%;
+    border-radius: 18px;
+  }
+
+  /* Datas */
+
+  .final-datas {
+    flex-direction: column;
+    gap: 18px;
+    min-height: 25vh;
+    font-size: 24px;
+  }
+
+  .final-linha {
+    width: 120px;
+  }
+
+  /* Texto final */
+
+  .final-dias {
+    min-height: 35vh;
+    font-size: 28px;
+    line-height: 48px;
+    padding: 20px;
+  }
+
+  /* Próximo capítulo */
+
+  .final-proximo {
+    min-height: 30vh;
+  }
+
+  .final-proximo h1 {
+    font-size: 36px;
+    text-align: center;
+  }
+
+  /* Livro */
+
+  .final-livro {
+    min-height: 50vh;
+    padding: 20px;
+  }
+
+  .final-folha {
+    width: 90%;
+    padding: 30px 22px;
+  }
+
+  .final-folha h2 {
+    font-size: 30px;
+  }
+
+  .final-folha p {
+    font-size: 18px;
+    line-height: 32px;
+  }
+
+  .final-barra {
+    height: 10px;
+    margin: 25px 0;
+  }
+
+  /* Botão */
+
+  .final-virar {
+    min-height: 25vh;
+  }
+
+  #virarPagina {
+    width: 90%;
+    max-width: 320px;
+
+    padding: 18px 25px;
+
+    font-size: 20px;
+  }
+
+  /* Transição */
+
+  #futuro::after {
+    height: 90px;
+  }
+}
