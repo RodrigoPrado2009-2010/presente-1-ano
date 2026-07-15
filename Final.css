@@ -246,49 +246,93 @@
   pointer-events: none;
 }
 
+/* ===================================
+          RESPONSIVO CELULAR
+=================================== */
+
 @media (max-width:768px){
 
-html,
-body{
-
+html,body{
     overflow-x:hidden;
-
 }
 
 #capitulo-final{
 
-    width:100%;
+    padding:70px 20px 100px;
+
     overflow:hidden;
 
 }
 
+/* CAPÍTULO */
+
+.final-capitulo{
+
+    min-height:35vh;
+
+}
+
+.final-capitulo p{
+
+    font-size:20px;
+
+    letter-spacing:5px;
+
+    text-align:center;
+
+}
+
+/* FRASES */
+
 .final-frase{
 
-    padding:30px 18px;
-    min-height:55vh;
+    min-height:45vh;
+
+    padding:20px;
 
 }
 
 .final-frase h2{
 
-    font-size:40px;
-    line-height:55px;
+    font-size:34px;
+
+    line-height:48px;
+
+    max-width:100%;
+
+}
+
+/* FOTO */
+
+.final-foto{
+
+    min-height:60vh;
+
+    padding:20px;
 
 }
 
 .final-foto img{
 
-    width:92%;
+    width:100%;
+
+    max-width:360px;
+
+    border-radius:18px;
 
 }
+
+/* DATAS */
 
 .final-datas{
 
     flex-direction:column;
 
-    gap:18px;
+    gap:20px;
 
     font-size:24px;
+
+    min-height:30vh;
 
 }
 
@@ -298,10 +342,27 @@ body{
 
 }
 
+/* TEXTO */
+
 .final-dias{
 
+    min-height:35vh;
+
+    padding:20px;
+
     font-size:28px;
-    line-height:46px;
+
+    line-height:45px;
+
+    text-align:center;
+
+}
+
+/* PRÓXIMO CAPÍTULO */
+
+.final-proximo{
+
+    min-height:30vh;
 
     padding:20px;
 
@@ -309,14 +370,27 @@ body{
 
 .final-proximo h1{
 
-    font-size:42px;
+    font-size:36px;
+
     text-align:center;
+
+}
+
+/* LIVRO */
+
+.final-livro{
+
+    min-height:auto;
+
+    padding:20px;
 
 }
 
 .final-folha{
 
-    width:92%;
+    width:100%;
+
+    max-width:360px;
 
     padding:30px 22px;
 
@@ -324,44 +398,64 @@ body{
 
 .final-folha h2{
 
-    font-size:30px;
+    font-size:32px;
 
 }
 
 .final-folha p{
 
-    font-size:19px;
-    line-height:34px;
+    font-size:18px;
+
+    line-height:32px;
+
+}
+
+.final-barra{
+
+    height:10px;
+
+    margin:25px 0;
+
+}
+
+/* BOTÃO */
+
+.final-virar{
+
+    min-height:25vh;
+
+    padding:20px;
 
 }
 
 #virarPagina{
 
-    width:90%;
+    width:100%;
 
     max-width:320px;
 
-    font-size:22px;
-
     padding:18px;
 
-}
-
-/* Corrige aquela faixa branca aparecendo */
-
-#capitulo-final,
-#futuro{
-
-    margin:0;
-    width:100vw;
-    overflow:hidden;
+    font-size:20px;
 
 }
+
+/* FADE */
 
 #futuro::after{
 
-    left:0;
-    width:100vw;
+    height:80px;
+
+}
+
+/* REMOVE A FAIXA BRANCA */
+
+#futuro,
+#capitulo-final{
+
+    margin:0;
+
+    overflow:hidden;
 
 }
 
