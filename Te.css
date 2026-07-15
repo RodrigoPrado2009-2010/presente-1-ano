@@ -747,249 +747,172 @@ header {
     opacity: 0;
   }
 }
-/* ===================================
-        RESPONSIVO CELULAR
-=================================== */
+/* ===========================
+      CELULAR
+=========================== */
 
-@media (max-width: 768px) {
-  body {
-    background-attachment: scroll;
-  }
-
-  /* Logo */
-
-  #logo {
-    width: 180px;
-    top: 20px;
-  }
-
-  /* Tela inicial */
-
-  .texto {
-    padding: 30px 20px;
-  }
-
-  .conteudo {
-    width: 90%;
-    padding: 35px 25px;
-  }
-
-  .conteudo h1,
-  #titulo {
-    font-size: 42px;
-  }
-
-  .conteudo p {
-    font-size: 18px;
-    line-height: 30px;
-  }
-
-  .botao {
-    padding: 14px 35px;
-    font-size: 18px;
-  }
-
-  /* Nossa História */
-
-  #historia {
-    padding: 60px 20px;
-  }
-
-  .titulo-flutuante span {
-    font-size: 42px;
-  }
-
-  .linha {
-    flex-direction: column;
-    align-items: center;
-    gap: 35px;
-  }
-
-  .momento {
-    width: 90%;
-    max-width: 340px;
-    padding: 25px;
-  }
-
-  .momento img {
-    width: 100%;
-  }
-
-  /* Trajetória */
-
-  #trajetoria {
-    padding: 60px 20px;
-  }
-
-  #trajetoria h2 {
-    font-size: 38px;
-  }
-
-  #trajetoria p {
-    font-size: 17px;
-    line-height: 30px;
-  }
-
-  /* Carta */
-
-  .titulo-carta {
-    font-size: 55px;
-  }
-
-  .envelope {
-    width: 320px;
-    height: 200px;
-  }
-
-  .aba {
-    border-left: 160px solid transparent;
-    border-right: 160px solid transparent;
-    border-top: 105px solid #cfcfcf;
-  }
-
-  .envelope::before {
-    border-left: 160px solid transparent;
-    border-right: 160px solid transparent;
-    border-bottom: 105px solid #e9e9e9;
-  }
-
-  .selo {
-    width: 80px;
-    height: 80px;
-  }
-
-  .coracao-selo,
-  .coracao-selo::before,
-  .coracao-selo::after {
-    width: 28px;
-    height: 28px;
-  }
-
-  .coracao-selo::before {
-    top: -14px;
-  }
-
-  .coracao-selo::after {
-    left: 14px;
-  }
-
-  .carta-aberta {
-    width: 90%;
-    padding: 30px;
-  }
-
-  .carta-aberta h3 {
-    font-size: 42px;
-  }
-
-  .carta-aberta p {
-    font-size: 17px;
-    line-height: 30px;
-  }
-
-  /* Tempo */
-
-  #tempo h2 {
-    font-size: 55px;
-  }
-
-  .subtitulo {
-    font-size: 18px;
-  }
-
-  .contador {
-    gap: 20px;
-  }
-
-  .caixa {
-    width: 120px;
-    padding: 20px;
-  }
-
-  .caixa span {
-    font-size: 38px;
-  }
-
-  .caixa p {
-    font-size: 15px;
-  }
-
-  /* Futuro */
-
-  #futuro {
-    padding: 60px 20px;
-  }
-
-  #futuro h2 {
-    font-size: 55px;
-  }
-
-  .introducao {
-    font-size: 18px;
-  }
-
-  .sonho {
-    width: 100%;
-  }
-
-  .sonho h3 {
-    font-size: 28px;
-  }
-
-  .frase-final {
-    padding: 25px;
-    font-size: 25px;
-    line-height: 42px;
-  }
-
-  /* Loading */
-
-  .logo-loading {
-    width: 130px;
-  }
-
-  #loading h2 {
-    font-size: 26px;
-  }
-
-  .barra {
-    width: 85%;
-  }
-}
-@media (max-width: 768px){
-      #capitulo-final{
-        width:100&;
-        overflow:hidden;
-    }
-
-    body::before{
-        content: "";
-        position: fixed;
-        inset: 0;
-
-        background: url("Imagens/FundoMobile.png") center top no-repeat;
-        background-size: cover;
-
-        z-index: -1;
-    }
-
-    body{
-        background: transparent;
-    }
-
-    .texto,
-    #historia,
-    #trajetoria,
-    #carta,
-    #tempo,
-    #futuro{
-        background: transparent;
-    }
-
-}
+@media (max-width:768px){
 
 html,
 body{
-    overflow-x: hidden;
-    width: 100%;
+    width:100%;
+    overflow-x:hidden;
+}
+
+/* Fundo */
+
+body{
+
+    background-image:url("Imagens/fundo-mobile.png");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+
+}
+
+/* Evita elementos passando da tela */
+
+*{
+    max-width:100%;
+}
+
+/* Fotos */
+
+img{
+    max-width:100%;
+    height:auto;
+}
+
+/* Container principal */
+
+.container{
+    width:100%;
+    padding:20px;
+}
+
+/* Cartão inicial */
+
+.card{
+
+    width:92%;
+    margin:auto;
+
+    padding:35px 22px;
+
+    border-radius:28px;
+
+}
+
+/* Título */
+
+.card h1{
+
+    font-size:52px;
+    line-height:60px;
+
+}
+
+/* Texto */
+
+.card p{
+
+    font-size:25px;
+    line-height:40px;
+
+}
+
+/* Botão */
+
+.card button{
+
+    width:220px;
+
+    height:70px;
+
+    font-size:30px;
+
+}
+
+/* Foto central */
+
+.foto-central{
+
+    width:90vw;
+
+    left:50%;
+    transform:translateX(-50%);
+
+}
+
+/* Polaroids */
+
+.polaroid{
+
+    width:110px;
+
+}
+
+.polaroid.esquerda{
+
+    left:-15px;
+    bottom:60px;
+
+}
+
+.polaroid.direita{
+
+    right:-15px;
+    top:100px;
+
+}
+
+/* Letras T O R */
+
+.letra{
+
+    font-size:95px;
+
+}
+
+.T{
+
+    left:10px;
+    top:40px;
+
+}
+
+.O{
+
+    left:50%;
+    transform:translateX(-50%);
+    top:60px;
+
+}
+
+.R{
+
+    right:10px;
+    bottom:20px;
+
+}
+
+/* Linha dourada */
+
+.linha-amor{
+
+    width:140%;
+    left:-20%;
+
+}
+
+/* Remove qualquer largura fixa */
+
+section{
+
+    width:100%;
+    overflow:hidden;
+
+}
+
 }
