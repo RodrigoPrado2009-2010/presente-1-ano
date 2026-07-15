@@ -246,131 +246,123 @@
   pointer-events: none;
 }
 
-@media (max-width: 768px) {
-  #capitulo-final {
-    padding: 70px 0 100px;
-  }
+@media (max-width:768px){
 
-  /* Capítulo */
+html,
+body{
 
-  .final-capitulo {
-    min-height: 30vh;
-  }
+    overflow-x:hidden;
 
-  .final-capitulo p {
-    font-size: 18px;
-    letter-spacing: 6px;
-    text-align: center;
-  }
-
-  /* Frases */
-
-  .final-frase {
-    min-height: 40vh;
-    padding: 25px;
-  }
-
-  .final-frase h2 {
-    font-size: 34px;
-    line-height: 48px;
-  }
-
-  /* Foto */
-
-  .final-foto {
-    min-height: 55vh;
-    padding: 20px;
-  }
-
-  .final-foto img {
-    width: 92%;
-    border-radius: 18px;
-  }
-
-  /* Datas */
-
-  .final-datas {
-    flex-direction: column;
-    gap: 18px;
-    min-height: 25vh;
-    font-size: 24px;
-  }
-
-  .final-linha {
-    width: 120px;
-  }
-
-  /* Texto final */
-
-  .final-dias {
-    min-height: 35vh;
-    font-size: 28px;
-    line-height: 48px;
-    padding: 20px;
-  }
-
-  /* Próximo capítulo */
-
-  .final-proximo {
-    min-height: 30vh;
-  }
-
-  .final-proximo h1 {
-    font-size: 36px;
-    text-align: center;
-  }
-
-  /* Livro */
-
-  .final-livro {
-    min-height: 50vh;
-    padding: 20px;
-  }
-
-  .final-folha {
-    width: 90%;
-    padding: 30px 22px;
-  }
-
-  .final-folha h2 {
-    font-size: 30px;
-  }
-
-  .final-folha p {
-    font-size: 18px;
-    line-height: 32px;
-  }
-
-  .final-barra {
-    height: 10px;
-    margin: 25px 0;
-  }
-
-  /* Botão */
-
-  .final-virar {
-    min-height: 25vh;
-  }
-
-  #virarPagina {
-    width: 90%;
-    max-width: 320px;
-
-    padding: 18px 25px;
-
-    font-size: 20px;
-  }
-
-  /* Transição */
-
-  #futuro::after {
-    height: 90px;
-  }
 }
 
 #capitulo-final{
+
     width:100%;
     overflow:hidden;
-    position:relative;
-    background:#fff;
+
+}
+
+.final-frase{
+
+    padding:30px 18px;
+    min-height:55vh;
+
+}
+
+.final-frase h2{
+
+    font-size:40px;
+    line-height:55px;
+
+}
+
+.final-foto img{
+
+    width:92%;
+
+}
+
+.final-datas{
+
+    flex-direction:column;
+
+    gap:18px;
+
+    font-size:24px;
+
+}
+
+.final-linha{
+
+    width:120px;
+
+}
+
+.final-dias{
+
+    font-size:28px;
+    line-height:46px;
+
+    padding:20px;
+
+}
+
+.final-proximo h1{
+
+    font-size:42px;
+    text-align:center;
+
+}
+
+.final-folha{
+
+    width:92%;
+
+    padding:30px 22px;
+
+}
+
+.final-folha h2{
+
+    font-size:30px;
+
+}
+
+.final-folha p{
+
+    font-size:19px;
+    line-height:34px;
+
+}
+
+#virarPagina{
+
+    width:90%;
+
+    max-width:320px;
+
+    font-size:22px;
+
+    padding:18px;
+
+}
+
+/* Corrige aquela faixa branca aparecendo */
+
+#capitulo-final,
+#futuro{
+
+    margin:0;
+    width:100vw;
+    overflow:hidden;
+
+}
+
+#futuro::after{
+
+    left:0;
+    width:100vw;
+
+}
+
 }
