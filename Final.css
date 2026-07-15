@@ -460,3 +460,95 @@ html,body{
 }
 
 }
+
+.popup {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.55);
+
+  backdrop-filter: blur(8px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: 0.4s;
+
+  z-index: 99999;
+}
+
+.popup.ativo {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup-conteudo {
+  width: 90%;
+  max-width: 430px;
+
+  background: white;
+
+  padding: 45px 35px;
+
+  border-radius: 25px;
+
+  text-align: center;
+
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+
+  transform: scale(0.8);
+
+  transition: 0.35s;
+}
+
+.popup.ativo .popup-conteudo {
+  transform: scale(1);
+}
+
+.popup-icone {
+  font-size: 55px;
+}
+
+.popup h2 {
+  font-size: 42px;
+
+  margin: 20px 0;
+
+  color: #2f2f2f;
+}
+
+.popup p {
+  font-size: 22px;
+
+  line-height: 38px;
+
+  color: #555;
+}
+
+#fecharPopup {
+  margin-top: 35px;
+
+  padding: 15px 45px;
+
+  border: none;
+
+  border-radius: 40px;
+
+  background: linear-gradient(135deg, #d4af37, #b8872d);
+
+  color: white;
+
+  font-size: 20px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+#fecharPopup:hover {
+  transform: scale(1.05);
+}
