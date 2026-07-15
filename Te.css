@@ -959,10 +959,9 @@ header {
 @media (max-width:768px){
 
     body{
-        background: url("Imagens/FundoMobile.png") center top repeat-y;
-        background-size: 100% auto;
-        background-attachment: scroll;
-    }
+    background: url("Imagens/FundoMobile.png") center top no-repeat fixed;
+    background-size: cover;
+}
 
 
 }
