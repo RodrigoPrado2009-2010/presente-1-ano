@@ -751,167 +751,445 @@ header {
       CELULAR
 =========================== */
 
+/* =====================================================
+                RESPONSIVO - PARTE 1
+===================================================== */
+
 @media (max-width:768px){
 
-html,
-body{
+*{
+    box-sizing:border-box;
+}
+
+html,body{
     width:100%;
     overflow-x:hidden;
 }
 
-/* Fundo */
-
 body{
-
     background-image:url("Imagens/fundo-mobile.png");
     background-size:cover;
-    background-position:center;
+    background-position:center top;
     background-repeat:no-repeat;
-    background-attachment:fixed;
-
+    background-attachment:scroll;
 }
 
-/* Evita elementos passando da tela */
+/* ---------------- LOADING ---------------- */
 
-*{
-    max-width:100%;
+.logo-loading{
+    width:120px;
 }
 
-/* Fotos */
-
-img{
-    max-width:100%;
-    height:auto;
+#loading h2{
+    font-size:24px;
+    text-align:center;
+    padding:0 20px;
 }
 
-/* Container principal */
+.barra{
+    width:85%;
+    height:10px;
+}
 
-.container{
-    width:100%;
+/* ---------------- LOGO ---------------- */
+
+#logo{
+    width:170px;
+    top:25px;
+}
+
+/* ---------------- TELA INICIAL ---------------- */
+
+.texto{
     padding:20px;
+    min-height:100vh;
 }
 
-/* Cartão inicial */
+.conteudo{
 
-.card{
+    width:100%;
+    max-width:360px;
 
-    width:92%;
-    margin:auto;
+    padding:35px 25px;
 
-    padding:35px 22px;
-
-    border-radius:28px;
+    border-radius:25px;
 
 }
 
-/* Título */
+#titulo,
+.conteudo h1{
 
-.card h1{
+    font-size:42px;
+    line-height:48px;
+
+}
+
+.conteudo p{
+
+    font-size:18px;
+    line-height:30px;
+
+    margin:25px 0 40px;
+
+}
+
+.botao{
+
+    width:100%;
+
+    text-align:center;
+
+    padding:16px;
+
+    font-size:18px;
+
+}
+
+/* ---------------- NOSSA HISTÓRIA ---------------- */
+
+#historia{
+
+    padding:70px 20px;
+
+}
+
+.titulo-flutuante{
+
+    line-height:55px;
+
+}
+
+.titulo-flutuante span{
+
+    font-size:42px;
+
+}
+
+.linha{
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:28px;
+
+}
+
+.momento{
+
+    width:100%;
+    max-width:360px;
+
+    padding:22px;
+
+}
+
+.momento h3{
+
+    font-size:28px;
+
+}
+
+.momento p{
+
+    font-size:16px;
+    line-height:28px;
+
+}
+
+.momento img{
+
+    width:100%;
+    border-radius:15px;
+
+}
+
+/* ---------------- TRAJETÓRIA ---------------- */
+
+#trajetoria{
+
+    padding:70px 20px;
+
+}
+
+#trajetoria h2{
+
+    font-size:40px;
+    line-height:48px;
+
+}
+
+#trajetoria p{
+
+    width:100%;
+
+    padding:25px;
+
+    font-size:17px;
+
+    line-height:30px;
+
+}
+
+/* ---------------- CARTA ---------------- */
+
+#carta{
+
+    padding:80px 20px;
+
+}
+
+.titulo-carta{
+
+    font-size:55px;
+
+    text-align:center;
+
+    margin-bottom:50px;
+
+}
+
+.envelope{
+
+    width:320px;
+    height:200px;
+
+}
+
+.aba{
+
+    border-left:160px solid transparent;
+    border-right:160px solid transparent;
+    border-top:105px solid #cfcfcf;
+
+}
+
+.envelope::before{
+
+    border-left:160px solid transparent;
+    border-right:160px solid transparent;
+    border-bottom:105px solid #e9e9e9;
+
+}
+
+.selo{
+
+    width:80px;
+    height:80px;
+
+}
+
+.coracao-selo,
+.coracao-selo::before,
+.coracao-selo::after{
+
+    width:28px;
+    height:28px;
+
+}
+
+.coracao-selo::before{
+
+    top:-14px;
+
+}
+
+.coracao-selo::after{
+
+    left:14px;
+
+}
+
+.carta-aberta{
+
+    width:100%;
+
+    padding:28px;
+
+}
+
+.carta-aberta h3{
+
+    font-size:42px;
+
+}
+
+.carta-aberta p{
+
+    font-size:17px;
+
+    line-height:30px;
+
+}
+
+/* ---------------- TEMPO ---------------- */
+
+#tempo{
+    padding:70px 20px;
+}
+
+#tempo h2{
+    font-size:50px;
+    line-height:58px;
+}
+
+.subtitulo{
+    font-size:18px;
+    line-height:28px;
+    margin:20px 0 40px;
+}
+
+.contador{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+    width:100%;
+
+    max-width:360px;
+
+}
+
+.caixa{
+
+    width:100%;
+
+    padding:20px 10px;
+
+}
+
+.caixa span{
+
+    font-size:38px;
+
+}
+
+.caixa p{
+
+    font-size:15px;
+
+}
+
+.caixa:last-child{
+
+    grid-column:1/3;
+
+    justify-self:center;
+
+    width:48%;
+
+}
+
+/* ---------------- FUTURO ---------------- */
+
+#futuro{
+
+    padding:70px 20px;
+
+}
+
+#futuro h2{
 
     font-size:52px;
-    line-height:60px;
+
+    line-height:58px;
 
 }
 
-/* Texto */
+.introducao{
 
-.card p{
+    font-size:18px;
 
-    font-size:25px;
+    line-height:30px;
+
+    margin-bottom:40px;
+
+}
+
+.sonhos{
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:25px;
+
+}
+
+.sonho{
+
+    width:100%;
+
+    max-width:360px;
+
+    padding:22px;
+
+}
+
+.sonho h3{
+
+    font-size:28px;
+
+}
+
+.sonho p{
+
+    font-size:16px;
+
+    line-height:28px;
+
+}
+
+.imagens-sonho{
+
+    grid-template-columns:1fr 1fr;
+
+    gap:10px;
+
+}
+
+.imagens-sonho img{
+
+    border-radius:12px;
+
+}
+
+.frase-final{
+
+    width:100%;
+
+    padding:25px;
+
+    margin-top:40px;
+
+    font-size:24px;
+
     line-height:40px;
 
 }
 
-/* Botão */
+/* ---------------- GERAL ---------------- */
 
-.card button{
+img{
 
-    width:220px;
+    max-width:100%;
 
-    height:70px;
-
-    font-size:30px;
+    height:auto;
 
 }
-
-/* Foto central */
-
-.foto-central{
-
-    width:90vw;
-
-    left:50%;
-    transform:translateX(-50%);
-
-}
-
-/* Polaroids */
-
-.polaroid{
-
-    width:110px;
-
-}
-
-.polaroid.esquerda{
-
-    left:-15px;
-    bottom:60px;
-
-}
-
-.polaroid.direita{
-
-    right:-15px;
-    top:100px;
-
-}
-
-/* Letras T O R */
-
-.letra{
-
-    font-size:95px;
-
-}
-
-.T{
-
-    left:10px;
-    top:40px;
-
-}
-
-.O{
-
-    left:50%;
-    transform:translateX(-50%);
-    top:60px;
-
-}
-
-.R{
-
-    right:10px;
-    bottom:20px;
-
-}
-
-/* Linha dourada */
-
-.linha-amor{
-
-    width:140%;
-    left:-20%;
-
-}
-
-/* Remove qualquer largura fixa */
 
 section{
 
-    width:100%;
     overflow:hidden;
+
+}
+
+h1,h2,h3,p{
+
+    word-wrap:break-word;
 
 }
 
