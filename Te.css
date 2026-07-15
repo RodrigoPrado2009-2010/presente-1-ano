@@ -957,3 +957,32 @@ header {
   }
 }
 
+@media (max-width:768px){
+
+body{
+
+    background-size:auto 100%;
+
+    background-repeat:repeat-x;
+
+    animation:fundo 45s linear infinite;
+
+}
+
+}
+
+@keyframes fundo{
+
+    from{
+
+        background-position:0 0;
+
+    }
+
+    to{
+
+        background-position:-900px 0;
+
+    }
+
+}
