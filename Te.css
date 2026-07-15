@@ -956,12 +956,13 @@ header {
     width: 85%;
   }
 }
+@media (max-width:768px){
 
-@media (max-width: 768px){
-
-    .texto{
-        background: url("Imagens/FundoMobile.png") center center no-repeat;
-        background-size: cover;
+    body{
+        background: url("Imagens/FundoMobile.png") center top repeat-y;
+        background-size: 100% auto;
+        background-attachment: scroll;
     }
+
 
 }
