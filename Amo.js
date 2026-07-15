@@ -226,3 +226,21 @@ window.addEventListener("load", () => {
     }, 1000);
   }, 3000);
 });
+
+const popup = document.getElementById("popupFinal");
+const abrir = document.getElementById("virarPagina");
+const fechar = document.getElementById("fecharPopup");
+
+abrir.addEventListener("click", () => {
+    popup.classList.add("ativo");
+});
+
+fechar.addEventListener("click", () => {
+    popup.classList.remove("ativo");
+});
+
+popup.addEventListener("click", (e) => {
+    if (e.target === popup) {
+        popup.classList.remove("ativo");
+    }
+});
