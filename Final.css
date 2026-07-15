@@ -367,3 +367,10 @@
     height: 90px;
   }
 }
+
+#capitulo-final{
+    width:100%;
+    overflow:hidden;
+    position:relative;
+    background:#fff;
+}
