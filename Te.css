@@ -761,17 +761,31 @@ header {
     box-sizing:border-box;
 }
 
-html,body{
-    width:100%;
+html,
+body{
     overflow-x:hidden;
+    width:100%;
+    min-height:100%;
 }
 
 body{
-    background-image:url("Imagens/fundo-mobile.png");
+    background:none;
+}
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-1;
+
+    background:url("Imagens/fundo-mobile.png") center center no-repeat;
+
     background-size:cover;
-    background-position:center top;
-    background-repeat:no-repeat;
-    background-attachment:scroll;
+
 }
 
 /* ---------------- LOADING ---------------- */
