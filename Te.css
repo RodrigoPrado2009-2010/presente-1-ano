@@ -986,3 +986,12 @@ body{
     }
 
 }
+
+@media (max-width: 768px){
+
+    .texto{
+        background: url("Imagens/FundoMobile.png") center center no-repeat;
+        background-size: cover;
+    }
+
+}
