@@ -956,12 +956,30 @@ header {
     width: 85%;
   }
 }
-@media (max-width:768px){
+@media (max-width: 768px){
+
+    body::before{
+        content: "";
+        position: fixed;
+        inset: 0;
+
+        background: url("Imagens/FundoMobile.png") center top no-repeat;
+        background-size: cover;
+
+        z-index: -1;
+    }
 
     body{
-    background: url("Imagens/FundoMobile.png") center top no-repeat fixed;
-    background-size: cover;
-}
+        background: transparent;
+    }
 
+    .texto,
+    #historia,
+    #trajetoria,
+    #carta,
+    #tempo,
+    #futuro{
+        background: transparent;
+    }
 
 }
