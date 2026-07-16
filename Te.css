@@ -942,6 +942,13 @@ header {
 /* ===================================
         RESPONSIVO CELULAR
 =================================== */
+html.is-mobile-device body {
+  background-image: url("Imagens/FundoMobile.png") !important;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+}
 
 @media (max-width: 768px) {
   html,
