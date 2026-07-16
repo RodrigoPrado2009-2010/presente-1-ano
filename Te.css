@@ -650,561 +650,505 @@ header {
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
 
+/*==========================
+        LOADING
+===========================*/
+
 #loading {
   position: fixed;
   inset: 0;
+
   z-index: 999999;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 30px;
 
-  background: radial-gradient(circle at top, #fffdf8, #f8f3ea 70%, #efe5d1);
+  background: radial-gradient(circle at top, #fffef9, #f7f2e7 65%, #efe3c8);
+
+  overflow: hidden;
 
   transition: 1s;
 }
 
-.logo-loading {
-  width: 170px;
-  animation: flutuar 3s ease-in-out infinite;
+#loading::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: radial-gradient(circle, #d4af37 1px, transparent 2px);
+
+  background-size: 45px 45px;
+
+  opacity: 0.18;
+
+  animation: particulas 12s linear infinite;
 }
 
-#loading h2 {
+@keyframes particulas {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(45px);
+  }
+}
+
+.logo-loading {
+  width: 180px;
+
+  margin-bottom: 30px;
+
+  animation: logo 3s ease-in-out infinite;
+}
+
+@keyframes logo {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(-12px) scale(1.05);
+  }
+}
+
+#loadingTexto {
   font-family: "Lora", serif;
+
   font-size: 34px;
-  color: #8c6d33;
-  font-weight: 500;
+
+  color: #8d6b2d;
+
+  margin-bottom: 35px;
+
+  text-align: center;
+
+  transition: 0.5s;
 }
 
 .barra {
-  width: 420px;
-  max-width: 85%;
+  width: 430px;
+  max-width: 90%;
 
-  height: 12px;
+  height: 14px;
 
-  background: #ececec;
-
-  border-radius: 999px;
+  border-radius: 50px;
 
   overflow: hidden;
 
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.55);
+
+  backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(255, 255, 255, 0.8);
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
 }
 
 .progresso {
-  width: 0%;
+  width: 0;
   height: 100%;
-
-  background: linear-gradient(90deg, #d4af37, #f3d36d, #d4af37);
-
-  border-radius: 999px;
-
+  background: linear-gradient(90deg, #c99b17, #ffe68c, #c99b17);
   position: relative;
-
-  animation: carregar 3s linear forwards;
 }
 
 .progresso::after {
   content: "";
-
   position: absolute;
-
   top: 0;
-  left: -50%;
-
-  width: 40%;
+  left: -40%;
+  width: 35%;
   height: 100%;
 
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.8);
 
   transform: skewX(-25deg);
 
-  animation: brilho 1.6s linear infinite;
+  animation: brilho 1.2s infinite;
 }
 
-@keyframes carregar {
+@keyframes brilho {
   to {
-    width: 100%;
+    left: 120%;
   }
 }
 
-@keyframes pulsar {
-  50% {
-    transform: scale(1.08);
-  }
+#porcentagem {
+  margin-top: 18px;
+
+  font-size: 28px;
+
+  font-family: "Poppins";
+
+  color: #a17d2c;
+
+  font-weight: 600;
 }
 
-#titulo::after {
-  content: "|";
+/* ==========================
+      365 MOTIVOS
+========================== */
 
-  animation: piscar 0.8s infinite;
+#motivos {
+  position: relative;
+
+  padding: 120px 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
 }
 
-@keyframes piscar {
-  50% {
-    opacity: 0;
-  }
+#motivos::after {
+  content: "";
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 180px;
+
+  background: linear-gradient(to bottom, transparent, #fff);
+
+  pointer-events: none;
 }
+
+#motivos h2 {
+  font-size: 70px;
+  font-family: "Cormorant Garamond", serif;
+  color: #2f2f2f;
+
+  margin-bottom: 10px;
+}
+
+#motivos h3 {
+  font-size: 62px;
+  color: #d4af37;
+
+  font-family: "Great Vibes", cursive;
+
+  margin-bottom: 35px;
+}
+
+.motivos-intro {
+  max-width: 750px;
+
+  font-size: 22px;
+  line-height: 38px;
+
+  color: #555;
+
+  margin-bottom: 70px;
+
+  font-family: "Poppins", sans-serif;
+}
+
+.motivo {
+  width: 850px;
+  max-width: 95%;
+
+  background: rgba(255, 255, 255, 0.82);
+
+  backdrop-filter: blur(10px);
+
+  padding: 35px;
+
+  border-radius: 22px;
+
+  margin-bottom: 25px;
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+
+  transition: 0.35s;
+
+  border: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+.motivo:hover {
+  transform: translateY(-8px);
+
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.18);
+}
+
+.motivo span {
+  display: block;
+
+  font-size: 26px;
+
+  color: #d4af37;
+
+  font-weight: bold;
+
+  margin-bottom: 18px;
+
+  font-family: "Lora", serif;
+}
+
+.motivo p {
+  font-size: 26px;
+
+  line-height: 42px;
+
+  color: #444;
+
+  font-family: "Cormorant Garamond", serif;
+}
+
 /* ===========================
-      CELULAR
+      BOTÃO GALERIA
 =========================== */
 
-/* =====================================================
-                RESPONSIVO - PARTE 1
-===================================================== */
-
-@media (max-width:768px){
-
-*{
-    box-sizing:border-box;
+.botao-galeria {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 15px 28px;
+  background: linear-gradient(135deg, #d4af37, #b8872d);
+  color: white;
+  text-decoration: none;
+  border-radius: 40px;
+  font-family: "Poppins", sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  transition: 0.35s;
+  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.35);
 }
 
-html,
-body{
-    overflow-x:hidden;
-    width:100%;
-    min-height:100%;
+.botao-galeria:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 18px 35px rgba(212, 175, 55, 0.45);
 }
 
-body{
-    background:none;
+/* ===================================
+        RESPONSIVO CELULAR
+=================================== */
+
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+  }
+
+  /* Logo */
+
+  #logo {
+    width: 180px;
+    top: 20px;
+  }
+
+  /* Tela inicial */
+
+  .texto {
+    padding: 30px 20px;
+  }
+
+  .conteudo {
+    width: 90%;
+    padding: 35px 25px;
+  }
+
+  .conteudo h1,
+  #titulo {
+    font-size: 42px;
+  }
+
+  .conteudo p {
+    font-size: 18px;
+    line-height: 30px;
+  }
+
+  .botao {
+    padding: 14px 35px;
+    font-size: 18px;
+  }
+
+  /* Nossa História */
+
+  #historia {
+    padding: 60px 20px;
+  }
+
+  .titulo-flutuante span {
+    font-size: 42px;
+  }
+
+  .linha {
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+  }
+
+  .momento {
+    width: 90%;
+    max-width: 340px;
+    padding: 25px;
+  }
+
+  .momento img {
+    width: 100%;
+  }
+
+  /* Trajetória */
+
+  #trajetoria {
+    padding: 60px 20px;
+  }
+
+  #trajetoria h2 {
+    font-size: 38px;
+  }
+
+  #trajetoria p {
+    font-size: 17px;
+    line-height: 30px;
+  }
+
+  /* Carta */
+
+  .titulo-carta {
+    font-size: 55px;
+  }
+
+  .envelope {
+    width: 320px;
+    height: 200px;
+  }
+
+  .aba {
+    border-left: 160px solid transparent;
+    border-right: 160px solid transparent;
+    border-top: 105px solid #cfcfcf;
+  }
+
+  .envelope::before {
+    border-left: 160px solid transparent;
+    border-right: 160px solid transparent;
+    border-bottom: 105px solid #e9e9e9;
+  }
+
+  .selo {
+    width: 80px;
+    height: 80px;
+  }
+
+  .coracao-selo,
+  .coracao-selo::before,
+  .coracao-selo::after {
+    width: 28px;
+    height: 28px;
+  }
+
+  .coracao-selo::before {
+    top: -14px;
+  }
+
+  .coracao-selo::after {
+    left: 14px;
+  }
+
+  .carta-aberta {
+    width: 90%;
+    padding: 30px;
+  }
+
+  .carta-aberta h3 {
+    font-size: 42px;
+  }
+
+  .carta-aberta p {
+    font-size: 17px;
+    line-height: 30px;
+  }
+
+  /* Tempo */
+
+  #tempo h2 {
+    font-size: 55px;
+  }
+
+  .subtitulo {
+    font-size: 18px;
+  }
+
+  .contador {
+    gap: 20px;
+  }
+
+  .caixa {
+    width: 120px;
+    padding: 20px;
+  }
+
+  .caixa span {
+    font-size: 38px;
+  }
+
+  .caixa p {
+    font-size: 15px;
+  }
+
+  /* Futuro */
+
+  #futuro {
+    padding: 60px 20px;
+  }
+
+  #futuro h2 {
+    font-size: 55px;
+  }
+
+  .introducao {
+    font-size: 18px;
+  }
+
+  .sonho {
+    width: 100%;
+  }
+
+  .sonho h3 {
+    font-size: 28px;
+  }
+
+  .frase-final {
+    padding: 25px;
+    font-size: 25px;
+    line-height: 42px;
+  }
+
+  /* Loading */
+
+  .logo-loading {
+    width: 130px;
+  }
+
+  #loading h2 {
+    font-size: 26px;
+  }
+
+  .barra {
+    width: 85%;
+  }
 }
 
-body::before{
+/* ==========================
+      TRANSIÇÃO ENTRE PÁGINAS
+========================== */
 
-    content:"";
-
-    position:fixed;
-
-    inset:0;
-
-    z-index:-1;
-
-    background:url("Imagens/FundoMobile.png") center center no-repeat;
-
-    background-size:cover;
-
+.page-transition {
+  position: fixed;
+  inset: 0;
+  background: #fff;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 99999;
+  transition: opacity 0.45s ease;
 }
 
-/* ---------------- LOADING ---------------- */
-
-.logo-loading{
-    width:120px;
-}
-
-#loading h2{
-    font-size:24px;
-    text-align:center;
-    padding:0 20px;
-}
-
-.barra{
-    width:85%;
-    height:10px;
-}
-
-/* ---------------- LOGO ---------------- */
-
-#logo{
-    width:170px;
-    top:25px;
-}
-
-/* ---------------- TELA INICIAL ---------------- */
-
-.texto{
-    padding:20px;
-    min-height:100vh;
-}
-
-.conteudo{
-
-    width:100%;
-    max-width:360px;
-
-    padding:35px 25px;
-
-    border-radius:25px;
-
-}
-
-#titulo,
-.conteudo h1{
-
-    font-size:42px;
-    line-height:48px;
-
-}
-
-.conteudo p{
-
-    font-size:18px;
-    line-height:30px;
-
-    margin:25px 0 40px;
-
-}
-
-.botao{
-
-    width:100%;
-
-    text-align:center;
-
-    padding:16px;
-
-    font-size:18px;
-
-}
-
-/* ---------------- NOSSA HISTÓRIA ---------------- */
-
-#historia{
-
-    padding:70px 20px;
-
-}
-
-.titulo-flutuante{
-
-    line-height:55px;
-
-}
-
-.titulo-flutuante span{
-
-    font-size:42px;
-
-}
-
-.linha{
-
-    flex-direction:column;
-
-    align-items:center;
-
-    gap:28px;
-
-}
-
-.momento{
-
-    width:100%;
-    max-width:360px;
-
-    padding:22px;
-
-}
-
-.momento h3{
-
-    font-size:28px;
-
-}
-
-.momento p{
-
-    font-size:16px;
-    line-height:28px;
-
-}
-
-.momento img{
-
-    width:100%;
-    border-radius:15px;
-
-}
-
-/* ---------------- TRAJETÓRIA ---------------- */
-
-#trajetoria{
-
-    padding:70px 20px;
-
-}
-
-#trajetoria h2{
-
-    font-size:40px;
-    line-height:48px;
-
-}
-
-#trajetoria p{
-
-    width:100%;
-
-    padding:25px;
-
-    font-size:17px;
-
-    line-height:30px;
-
-}
-
-/* ---------------- CARTA ---------------- */
-
-#carta{
-
-    padding:80px 20px;
-
-}
-
-.titulo-carta{
-
-    font-size:55px;
-
-    text-align:center;
-
-    margin-bottom:50px;
-
-}
-
-.envelope{
-
-    width:320px;
-    height:200px;
-
-}
-
-.aba{
-
-    border-left:160px solid transparent;
-    border-right:160px solid transparent;
-    border-top:105px solid #cfcfcf;
-
-}
-
-.envelope::before{
-
-    border-left:160px solid transparent;
-    border-right:160px solid transparent;
-    border-bottom:105px solid #e9e9e9;
-
-}
-
-.selo{
-
-    width:80px;
-    height:80px;
-
-}
-
-.coracao-selo,
-.coracao-selo::before,
-.coracao-selo::after{
-
-    width:28px;
-    height:28px;
-
-}
-
-.coracao-selo::before{
-
-    top:-14px;
-
-}
-
-.coracao-selo::after{
-
-    left:14px;
-
-}
-
-.carta-aberta{
-
-    width:100%;
-
-    padding:28px;
-
-}
-
-.carta-aberta h3{
-
-    font-size:42px;
-
-}
-
-.carta-aberta p{
-
-    font-size:17px;
-
-    line-height:30px;
-
-}
-
-/* ---------------- TEMPO ---------------- */
-
-#tempo{
-    padding:70px 20px;
-}
-
-#tempo h2{
-    font-size:50px;
-    line-height:58px;
-}
-
-.subtitulo{
-    font-size:18px;
-    line-height:28px;
-    margin:20px 0 40px;
-}
-
-.contador{
-
-    display:grid;
-
-    grid-template-columns:repeat(2,1fr);
-
-    gap:18px;
-
-    width:100%;
-
-    max-width:360px;
-
-}
-
-.caixa{
-
-    width:100%;
-
-    padding:20px 10px;
-
-}
-
-.caixa span{
-
-    font-size:38px;
-
-}
-
-.caixa p{
-
-    font-size:15px;
-
-}
-
-.caixa:last-child{
-
-    grid-column:1/3;
-
-    justify-self:center;
-
-    width:48%;
-
-}
-
-/* ---------------- FUTURO ---------------- */
-
-#futuro{
-
-    padding:70px 20px;
-
-}
-
-#futuro h2{
-
-    font-size:52px;
-
-    line-height:58px;
-
-}
-
-.introducao{
-
-    font-size:18px;
-
-    line-height:30px;
-
-    margin-bottom:40px;
-
-}
-
-.sonhos{
-
-    flex-direction:column;
-
-    align-items:center;
-
-    gap:25px;
-
-}
-
-.sonho{
-
-    width:100%;
-
-    max-width:360px;
-
-    padding:22px;
-
-}
-
-.sonho h3{
-
-    font-size:28px;
-
-}
-
-.sonho p{
-
-    font-size:16px;
-
-    line-height:28px;
-
-}
-
-.imagens-sonho{
-
-    grid-template-columns:1fr 1fr;
-
-    gap:10px;
-
-}
-
-.imagens-sonho img{
-
-    border-radius:12px;
-
-}
-
-.frase-final{
-
-    width:100%;
-
-    padding:25px;
-
-    margin-top:40px;
-
-    font-size:24px;
-
-    line-height:40px;
-
-}
-
-/* ---------------- GERAL ---------------- */
-
-img{
-
-    max-width:100%;
-
-    height:auto;
-
-}
-
-section{
-
-    overflow:hidden;
-
-}
-
-h1,h2,h3,p{
-
-    word-wrap:break-word;
-
-}
-
+.page-transition.ativa {
+  opacity: 1;
 }
