@@ -12,13 +12,28 @@ body {
 }
 
 body {
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* ===================================
+        FUNDO (fixo na tela, não na página)
+=================================== */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+
   background-image: url("Imagens/2f.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+}
 
-  overflow-x: hidden;
+html.is-mobile-device body::before {
+  background-image: url("Imagens/FundoMobile.png");
 }
 
 #logo {
@@ -942,13 +957,6 @@ header {
 /* ===================================
         RESPONSIVO CELULAR
 =================================== */
-html.is-mobile-device body {
-  background-image: url("Imagens/FundoMobile.png") !important;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-}
 
 @media (max-width: 768px) {
   html,
@@ -956,14 +964,6 @@ html.is-mobile-device body {
     width: 100%;
     max-width: 100%;
     overflow-x: hidden;
-  }
-
-  body {
-    background-image: url("Imagens/FundoMobile.png") !important; 
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
   }
 
   /* Logo */
