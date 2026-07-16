@@ -12,7 +12,7 @@ body {
 }
 
 body {
-  background-image: url("Imagens/2f.png");
+  background-image: url("Imagens/FundoMobile.png?v=2");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -39,7 +39,7 @@ header {
 
 .texto {
   width: 100%;
-    min-height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -944,7 +944,6 @@ header {
 =================================== */
 
 @media (max-width: 768px) {
-
   html,
   body {
     width: 100%;
@@ -953,16 +952,11 @@ header {
   }
 
   body {
-    background: url("Imagens/FundoMobile.png") center center / cover no-repeat !important;
-    background-attachment: scroll !important;
-  }
-
-  .momento,
-  .sonho,
-  .motivo,
-  .carta-aberta,
-  .conteudo {
-    max-width: 100%;
+    background-image: url("Imagens/FundoMobile.png?v=2");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
   }
 
   /* Logo */
