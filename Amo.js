@@ -211,20 +211,39 @@ function escreverFinal() {
 // 🎬 LOADING
 // ===============================
 
-window.addEventListener("load", () => {
-  setTimeout(() => {
-    const tela = document.getElementById("loading");
+const tela = document.getElementById("loading");
 
+function finalizarLoading() {
+  if (!siteCarregado || !barraCompleta) return;
+
+  setTimeout(() => {
     tela.style.opacity = "0";
 
     setTimeout(() => {
       tela.style.display = "none";
 
       escreverTitulo();
-
       revelar();
-    }, 1000);
-  }, 3000);
+
+      sessionStorage.setItem("siteCarregado", "true");
+    }, 800);
+  }, 400);
+}
+
+window.addEventListener("load", () => {
+  // Já carregou nesta aba
+  if (sessionStorage.getItem("siteCarregado") === "true") {
+    tela.style.display = "none";
+
+    escreverTitulo();
+    revelar();
+
+    return;
+  }
+
+  siteCarregado = true;
+
+  finalizarLoading();
 });
 
 const popup = document.getElementById("popupFinal");
@@ -232,15 +251,73 @@ const abrir = document.getElementById("virarPagina");
 const fechar = document.getElementById("fecharPopup");
 
 abrir.addEventListener("click", () => {
-    popup.classList.add("ativo");
+  popup.classList.add("ativo");
 });
 
 fechar.addEventListener("click", () => {
-    popup.classList.remove("ativo");
+  popup.classList.remove("ativo");
 });
 
 popup.addEventListener("click", (e) => {
-    if (e.target === popup) {
-        popup.classList.remove("ativo");
-    }
+  if (e.target === popup) {
+    popup.classList.remove("ativo");
+  }
+});
+
+const barra = document.querySelector(".progresso");
+const porcentagem = document.getElementById("porcentagem");
+const textoLoading = document.getElementById("loadingTexto");
+
+const textos = [
+  "Preparando Seu presente... 🎁",
+  "Relembrando nossas memórias... 📖",
+  "Escrevendo a Sua cartinha... 💌",
+  "Carregando todos os 365 motivos... 🌹",
+  "Carregando nosso primeiro ano... ❤️",
+];
+
+let progresso = 0;
+
+const intervalo = setInterval(() => {
+  progresso++;
+
+  if (progresso > 100) progresso = 100;
+
+  barra.style.width = progresso + "%";
+  porcentagem.textContent = progresso + "%";
+
+  if (progresso === 20) textoLoading.textContent = textos[1];
+  if (progresso === 40) textoLoading.textContent = textos[2];
+  if (progresso === 60) textoLoading.textContent = textos[3];
+  if (progresso === 80) textoLoading.textContent = textos[4];
+
+  if (progresso === 100) {
+    clearInterval(intervalo);
+
+    barraCompleta = true;
+
+    finalizarLoading();
+  }
+}, 100);
+
+// ===============================
+// TRANSIÇÃO ENTRE PÁGINAS
+// ===============================
+
+const transition = document.querySelector(".page-transition");
+
+document.querySelectorAll("a[href]").forEach((link) => {
+  const href = link.getAttribute("href");
+
+  if (href && !href.startsWith("#") && !href.startsWith("http")) {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      transition.classList.add("ativa");
+
+      setTimeout(() => {
+        window.location.href = href;
+      }, 450);
+    });
+  }
 });
