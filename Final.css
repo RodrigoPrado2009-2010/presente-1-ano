@@ -227,239 +227,134 @@
   transform: translateY(0);
 }
 
-#futuro {
-  position: relative;
-}
-
-#futuro::after {
-  content: "";
-  position: absolute;
-
-  left: 0;
-  bottom: 0;
-
-  width: 100%;
-  height: 180px;
-
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff);
-
-  pointer-events: none;
-}
-
 /* ===================================
-          RESPONSIVO CELULAR
+        RESPONSIVO CELULAR
 =================================== */
 
-@media (max-width:768px){
+@media (max-width: 768px) {
+  #capitulo-final {
+    padding: 70px 0 100px;
+  }
 
-html,body{
-    overflow-x:hidden;
+  /* Capítulo */
+
+  .final-capitulo {
+    min-height: 30vh;
+  }
+
+  .final-capitulo p {
+    font-size: 18px;
+    letter-spacing: 6px;
+    text-align: center;
+  }
+
+  /* Frases */
+
+  .final-frase {
+    min-height: 40vh;
+    padding: 25px;
+  }
+
+  .final-frase h2 {
+    font-size: clamp(28px, 7vw, 34px);
+    line-height: 48px;
+  }
+
+  /* Foto */
+
+  .final-foto {
+    min-height: 55vh;
+    padding: 20px;
+  }
+
+  .final-foto img {
+    width: 92%;
+    border-radius: 18px;
+  }
+
+  /* Datas */
+
+  .final-datas {
+    flex-direction: column;
+    gap: 18px;
+    min-height: 25vh;
+    font-size: 24px;
+  }
+
+  .final-linha {
+    width: 120px;
+  }
+
+  /* Texto Final */
+
+  .final-dias {
+    min-height: 35vh;
+    font-size: 28px;
+    line-height: 48px;
+    padding: 20px;
+  }
+
+  /* Próximo capítulo */
+
+  .final-proximo {
+    min-height: 30vh;
+  }
+
+  .final-proximo h1 {
+    font-size: 36px;
+    text-align: center;
+  }
+
+  /* Livro */
+
+  .final-livro {
+    min-height: 50vh;
+    padding: 20px;
+  }
+
+  .final-folha {
+    width: 90%;
+    padding: 30px 22px;
+  }
+
+  .final-folha h2 {
+    font-size: 30px;
+  }
+
+  .final-folha p {
+    font-size: 18px;
+    line-height: 32px;
+  }
+
+  .final-barra {
+    height: 10px;
+    margin: 25px 0;
+  }
+
+  /* Botão */
+
+  .final-virar {
+    min-height: 25vh;
+  }
+
+  #virarPagina {
+    width: 90%;
+    max-width: 320px;
+
+    padding: 18px 25px;
+
+    font-size: 20px;
+  }
+
+  /* Fade */
+
+  #futuro::after {
+    height: 90px;
+  }
 }
-
-#capitulo-final{
-
-    padding:70px 20px 100px;
-
-    overflow:hidden;
-
-}
-
-/* CAPÍTULO */
-
-.final-capitulo{
-
-    min-height:35vh;
-
-}
-
-.final-capitulo p{
-
-    font-size:20px;
-
-    letter-spacing:5px;
-
-    text-align:center;
-
-}
-
-/* FRASES */
-
-.final-frase{
-
-    min-height:45vh;
-
-    padding:20px;
-
-}
-
-.final-frase h2{
-
-    font-size:34px;
-
-    line-height:48px;
-
-    max-width:100%;
-
-}
-
-/* FOTO */
-
-.final-foto{
-
-    min-height:60vh;
-
-    padding:20px;
-
-}
-
-.final-foto img{
-
-    width:100%;
-
-    max-width:360px;
-
-    border-radius:18px;
-
-}
-
-/* DATAS */
-
-.final-datas{
-
-    flex-direction:column;
-
-    gap:20px;
-
-    font-size:24px;
-
-    min-height:30vh;
-
-}
-
-.final-linha{
-
-    width:120px;
-
-}
-
-/* TEXTO */
-
-.final-dias{
-
-    min-height:35vh;
-
-    padding:20px;
-
-    font-size:28px;
-
-    line-height:45px;
-
-    text-align:center;
-
-}
-
-/* PRÓXIMO CAPÍTULO */
-
-.final-proximo{
-
-    min-height:30vh;
-
-    padding:20px;
-
-}
-
-.final-proximo h1{
-
-    font-size:36px;
-
-    text-align:center;
-
-}
-
-/* LIVRO */
-
-.final-livro{
-
-    min-height:auto;
-
-    padding:20px;
-
-}
-
-.final-folha{
-
-    width:100%;
-
-    max-width:360px;
-
-    padding:30px 22px;
-
-}
-
-.final-folha h2{
-
-    font-size:32px;
-
-}
-
-.final-folha p{
-
-    font-size:18px;
-
-    line-height:32px;
-
-}
-
-.final-barra{
-
-    height:10px;
-
-    margin:25px 0;
-
-}
-
-/* BOTÃO */
-
-.final-virar{
-
-    min-height:25vh;
-
-    padding:20px;
-
-}
-
-#virarPagina{
-
-    width:100%;
-
-    max-width:320px;
-
-    padding:18px;
-
-    font-size:20px;
-
-}
-
-/* FADE */
-
-#futuro::after{
-
-    height:80px;
-
-}
-
-/* REMOVE A FAIXA BRANCA */
-
-#futuro,
-#capitulo-final{
-
-    margin:0;
-
-    overflow:hidden;
-
-}
-
-}
+/* ===========================
+          POPUP
+=========================== */
 
 .popup {
   position: fixed;
