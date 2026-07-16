@@ -944,26 +944,26 @@ header {
 =================================== */
 
 @media (max-width: 768px) {
+
+  html,
   body {
-    background: red !important;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
   }
-}
 
   body {
-    background-image: url("Imagens/FundoMobile.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
+    background: url("Imagens/FundoMobile.png") center center / cover no-repeat !important;
+    background-attachment: scroll !important;
   }
 
   .momento,
-.sonho,
-.motivo,
-.carta-aberta,
-.conteudo {
-  max-width: 100%;
-}
+  .sonho,
+  .motivo,
+  .carta-aberta,
+  .conteudo {
+    max-width: 100%;
+  }
 
   /* Logo */
 
