@@ -1062,7 +1062,7 @@ header {
   }
 
   body {
-    background-image: url("Imagens/FundoMobile.png") !important;
+    background-image: url("Imagens/FundoMobile.png?v=3") !important;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
