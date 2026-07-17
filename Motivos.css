@@ -80,6 +80,29 @@ header.motivos-header {
   .motivos-header p {
     font-size: 15px;
   }
+        .intro-card {
+    width: 88%;
+  }
+
+  .f1 {
+    font-size: 20px;
+  }
+
+  .f2 {
+    font-size: 24px;
+    margin: 20px 0;
+  }
+
+  .f3 {
+    font-size: 30px;
+  }
+
+  #comecar {
+    margin-top: 40px;
+    padding: 14px 32px;
+    font-size: 17px;
+  }
+        
 }
 
 #introMotivos {
