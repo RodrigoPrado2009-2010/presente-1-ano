@@ -32,23 +32,23 @@ setInterval(criarCoracao, 300);
 
 function abrirCarta() {
   const envelope = document.querySelector(".envelope");
-
   const carta = document.querySelector(".carta-aberta");
 
-  envelope.style.opacity = "0";
-  envelope.style.transform = "scale(0)";
+  if (navigator.vibrate) {
+    navigator.vibrate(35);
+  }
+
+  envelope.classList.add("abrindo");
 
   setTimeout(() => {
     envelope.style.display = "none";
-
     carta.style.display = "block";
 
     setTimeout(() => {
       carta.style.opacity = "1";
-
       carta.style.transform = "scale(1)";
     }, 50);
-  }, 200);
+  }, 700);
 }
 
 // ===============================
@@ -112,6 +112,71 @@ function atualizarTempo() {
 atualizarTempo();
 
 setInterval(atualizarTempo, 1000);
+
+// ===============================
+// 👉 CARROSSEL SWIPE - NOSSA HISTÓRIA
+// ===============================
+
+const linhaHistoria = document.querySelector("#historia .linha");
+const dotsHistoria = document.getElementById("dotsHistoria");
+
+if (linhaHistoria && dotsHistoria) {
+  const cardsHistoria = linhaHistoria.querySelectorAll(".momento");
+
+  cardsHistoria.forEach((_, i) => {
+    const dot = document.createElement("span");
+    if (i === 0) dot.classList.add("ativo");
+    dotsHistoria.appendChild(dot);
+  });
+
+  const dots = dotsHistoria.querySelectorAll("span");
+
+  const observerHistoria = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const index = Array.from(cardsHistoria).indexOf(entry.target);
+          dots.forEach((d) => d.classList.remove("ativo"));
+          if (dots[index]) dots[index].classList.add("ativo");
+        }
+      });
+    },
+    { root: linhaHistoria, threshold: 0.6 },
+  );
+
+  cardsHistoria.forEach((card) => observerHistoria.observe(card));
+}
+
+// ===============================
+// ⏳ TOQUE NO CONTADOR
+// ===============================
+
+document.querySelectorAll(".caixa").forEach((caixa) => {
+  const frase = caixa.dataset.frase;
+  if (!frase) return;
+
+  const balao = document.createElement("div");
+  balao.classList.add("frase-caixa");
+  balao.textContent = frase;
+  caixa.appendChild(balao);
+
+  caixa.addEventListener("click", () => {
+    if (navigator.vibrate) {
+      navigator.vibrate(20);
+    }
+
+    caixa.classList.remove("pulsar");
+    void caixa.offsetWidth;
+    caixa.classList.add("pulsar");
+
+    balao.classList.add("ativa");
+
+    clearTimeout(caixa._fraseTimeout);
+    caixa._fraseTimeout = setTimeout(() => {
+      balao.classList.remove("ativa");
+    }, 1600);
+  });
+});
 
 // ===============================
 // ⌨️ MÁQUINA DE ESCREVER (INÍCIO)
@@ -210,7 +275,8 @@ function escreverFinal() {
 // ===============================
 // 🎬 LOADING
 // ===============================
-
+let siteCarregado = false;
+let barraCompleta = false;
 const tela = document.getElementById("loading");
 
 function finalizarLoading() {
@@ -231,7 +297,6 @@ function finalizarLoading() {
 }
 
 window.addEventListener("load", () => {
-  // Já carregou nesta aba
   if (sessionStorage.getItem("siteCarregado") === "true") {
     tela.style.display = "none";
 
@@ -245,6 +310,10 @@ window.addEventListener("load", () => {
 
   finalizarLoading();
 });
+
+// ===============================
+// 💌 POPUP
+// ===============================
 
 const popup = document.getElementById("popupFinal");
 const abrir = document.getElementById("virarPagina");
@@ -264,9 +333,14 @@ popup.addEventListener("click", (e) => {
   }
 });
 
+// ===============================
+// 📊 BARRA DE CARREGAMENTO
+// ===============================
+
 const barra = document.querySelector(".progresso");
 const porcentagem = document.getElementById("porcentagem");
 const textoLoading = document.getElementById("loadingTexto");
+const dog = document.getElementById("dog");
 
 const textos = [
   "Preparando Seu presente... 🎁",
@@ -278,28 +352,41 @@ const textos = [
 
 let progresso = 0;
 
-const intervalo = setInterval(() => {
-  progresso++;
+if (barra && porcentagem && textoLoading) {
+  const intervalo = setInterval(() => {
+    progresso++;
 
-  if (progresso > 100) progresso = 100;
+    if (progresso > 100) progresso = 100;
 
-  barra.style.width = progresso + "%";
-  porcentagem.textContent = progresso + "%";
+    barra.style.width = progresso + "%";
 
-  if (progresso === 20) textoLoading.textContent = textos[1];
-  if (progresso === 40) textoLoading.textContent = textos[2];
-  if (progresso === 60) textoLoading.textContent = textos[3];
-  if (progresso === 80) textoLoading.textContent = textos[4];
+    if (dog) {
+      dog.style.left = `calc(${progresso}% - 65px)`;
+    }
 
-  if (progresso === 100) {
-    clearInterval(intervalo);
+    porcentagem.textContent = progresso + "%";
 
-    barraCompleta = true;
+    if (progresso === 20) textoLoading.textContent = textos[1];
+    if (progresso === 40) textoLoading.textContent = textos[2];
+    if (progresso === 60) textoLoading.textContent = textos[3];
+    if (progresso === 80) textoLoading.textContent = textos[4];
 
-    finalizarLoading();
-  }
-}, 100);
+    if (progresso === 100) {
+      if (dog) {
+        dog.classList.remove("run");
+        dog.classList.add("lying");
+      }
 
+      clearInterval(intervalo);
+
+      barraCompleta = true;
+
+      setTimeout(() => {
+        finalizarLoading();
+      }, 100);
+    }
+  }, 120);
+}
 // ===============================
 // TRANSIÇÃO ENTRE PÁGINAS
 // ===============================
