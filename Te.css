@@ -1049,10 +1049,16 @@ header {
 =================================== */
 
 @media (max-width: 768px) {
+  html,
+body {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100%;
+}
   body {
     background: blue !important;
   }
-}
+
 
   /* Logo */
 
