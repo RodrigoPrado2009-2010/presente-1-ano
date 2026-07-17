@@ -1346,3 +1346,14 @@ body {
 .page-transition.ativa {
   opacity: 1;
 }
+
+@media (max-width: 768px) {
+  html {
+    background: url("Imagens/FundoMobile.png") center center / cover no-repeat !important;
+    background-attachment: scroll !important;
+  }
+
+  body {
+    background: transparent !important;
+  }
+}
