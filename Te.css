@@ -1061,12 +1061,9 @@ header {
     overflow-x: hidden;
   }
 
-  body {
-    background-image: url("Imagens/FundoMobile.png?v=3") !important;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
+body {
+    background: url("Imagens/FundoMobile.png?v=3") center center / cover no-repeat !important;
+    background-attachment: scroll !important;
   }
 
   /* Logo */
