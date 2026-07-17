@@ -13,8 +13,7 @@ body {
 }
 
 body {
-  background: url("Imagens/2f.png") center center / cover no-repeat;
-  background-attachment: fixed;
+  background: red !important;
 }
 
 #logo {
@@ -1049,21 +1048,11 @@ header {
         RESPONSIVO CELULAR
 =================================== */
 
-@media screen and (max-width: 768px) {
-  html,
+@media (max-width: 768px) {
   body {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
+    background: blue !important;
   }
-
-body {
-     background-image: url("Imagens/FundoMobile.png") !important;
-  background-size: cover !important;
-  background-position: center top !important;
-  background-repeat: no-repeat !important;
-  background-attachment: scroll !important;
-  }
+}
 
   /* Logo */
 
