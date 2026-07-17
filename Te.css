@@ -9,16 +9,12 @@ body {
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
+  min-height: 100%;
 }
 
 body {
-  background-image: url("Imagens/2f.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: url("Imagens/2f.png") center center / cover no-repeat;
   background-attachment: fixed;
-
-  overflow-x: hidden;
 }
 
 #logo {
@@ -1062,8 +1058,11 @@ header {
   }
 
 body {
-    background: url("Imagens/FundoMobile.png?v=3") center center / cover no-repeat !important;
-    background-attachment: scroll !important;
+     background-image: url("Imagens/FundoMobile.png") !important;
+  background-size: cover !important;
+  background-position: center top !important;
+  background-repeat: no-repeat !important;
+  background-attachment: scroll !important;
   }
 
   /* Logo */
