@@ -1285,7 +1285,39 @@ header {
     font-size: 25px;
     line-height: 42px;
   }
+/* Motivos (365 dias) */
 
+  #motivos {
+    padding: 60px 20px;
+  }
+
+  #motivos h2 {
+    font-size: 42px;
+  }
+
+  #motivos h3 {
+    font-size: 36px;
+  }
+
+  .motivos-intro {
+    font-size: 17px;
+    line-height: 28px;
+    margin-bottom: 40px;
+  }
+
+  .motivo {
+    padding: 22px;
+  }
+
+  .motivo span {
+    font-size: 20px;
+  }
+
+  .motivo p {
+    font-size: 19px;
+    line-height: 30px;
+  }
+  
   /* Loading */
 
   .logo-loading {
