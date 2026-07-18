@@ -388,6 +388,55 @@ if (barra && porcentagem && textoLoading) {
   }, 120);
 }
 // ===============================
+// 💋 BOTÃO DE BEIJO
+// ===============================
+
+const botaoBeijo = document.getElementById("botaoBeijo");
+const overlayBeijo = document.getElementById("overlayBeijo");
+let beijoTimeout;
+
+if (botaoBeijo && overlayBeijo) {
+  botaoBeijo.addEventListener("click", () => {
+    if (navigator.vibrate) {
+      navigator.vibrate(30);
+    }
+
+    overlayBeijo.classList.remove("ativo");
+    void overlayBeijo.offsetWidth;
+    overlayBeijo.classList.add("ativo");
+
+    clearTimeout(beijoTimeout);
+    beijoTimeout = setTimeout(() => {
+      overlayBeijo.classList.remove("ativo");
+    }, 1100);
+  });
+
+  overlayBeijo.addEventListener("click", () => {
+    clearTimeout(beijoTimeout);
+    overlayBeijo.classList.remove("ativo");
+  });
+
+  const capituloFinal = document.getElementById("capitulo-final");
+
+  if (capituloFinal) {
+    const observerBeijo = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            botaoBeijo.classList.add("escondido");
+          } else {
+            botaoBeijo.classList.remove("escondido");
+          }
+        });
+      },
+      { threshold: 0 },
+    );
+
+    observerBeijo.observe(capituloFinal);
+  }
+}
+
+// ===============================
 // TRANSIÇÃO ENTRE PÁGINAS
 // ===============================
 
