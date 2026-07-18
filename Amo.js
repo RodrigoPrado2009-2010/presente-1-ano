@@ -388,27 +388,52 @@ if (barra && porcentagem && textoLoading) {
   }, 120);
 }
 // ===============================
-// 💋 BOTÃO DE BEIJO
+// 💌 MENU DE CARINHOS
 // ===============================
 
-const botaoBeijo = document.getElementById("botaoBeijo");
+const menuCarinhos = document.getElementById("menuCarinhos");
+const botaoMenuCarinhos = document.getElementById("botaoMenuCarinhos");
+const opcoesCarinho = document.querySelectorAll(".opcao-carinho");
 const overlayBeijo = document.getElementById("overlayBeijo");
+const imgOverlayBeijo = document.getElementById("imgOverlayBeijo");
 let beijoTimeout;
 
-if (botaoBeijo && overlayBeijo) {
-  botaoBeijo.addEventListener("click", () => {
+if (menuCarinhos && botaoMenuCarinhos && overlayBeijo && imgOverlayBeijo) {
+  botaoMenuCarinhos.addEventListener("click", () => {
     if (navigator.vibrate) {
-      navigator.vibrate(30);
+      navigator.vibrate(20);
     }
 
-    overlayBeijo.classList.remove("ativo");
-    void overlayBeijo.offsetWidth;
-    overlayBeijo.classList.add("ativo");
+    menuCarinhos.classList.toggle("aberto");
 
-    clearTimeout(beijoTimeout);
-    beijoTimeout = setTimeout(() => {
+    botaoMenuCarinhos.textContent = menuCarinhos.classList.contains("aberto")
+      ? "✖️"
+      : "💌";
+  });
+
+  opcoesCarinho.forEach((opcao) => {
+    opcao.addEventListener("click", () => {
+      if (navigator.vibrate) {
+        navigator.vibrate(30);
+      }
+
+      const gif = opcao.dataset.gif;
+      if (!gif) return;
+
+      imgOverlayBeijo.src = gif;
+
       overlayBeijo.classList.remove("ativo");
-    }, 1100);
+      void overlayBeijo.offsetWidth;
+      overlayBeijo.classList.add("ativo");
+
+      menuCarinhos.classList.remove("aberto");
+      botaoMenuCarinhos.textContent = "💌";
+
+      clearTimeout(beijoTimeout);
+      beijoTimeout = setTimeout(() => {
+        overlayBeijo.classList.remove("ativo");
+      }, 1500);
+    });
   });
 
   overlayBeijo.addEventListener("click", () => {
@@ -423,9 +448,11 @@ if (botaoBeijo && overlayBeijo) {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            botaoBeijo.classList.add("escondido");
+            menuCarinhos.classList.add("escondido");
+            menuCarinhos.classList.remove("aberto");
+            botaoMenuCarinhos.textContent = "💌";
           } else {
-            botaoBeijo.classList.remove("escondido");
+            menuCarinhos.classList.remove("escondido");
           }
         });
       },
