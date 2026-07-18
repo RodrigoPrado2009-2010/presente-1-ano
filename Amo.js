@@ -48,7 +48,7 @@ function abrirCarta() {
       carta.style.opacity = "1";
       carta.style.transform = "scale(1)";
     }, 50);
-  }, 700);
+  }, 550);
 }
 
 // ===============================
