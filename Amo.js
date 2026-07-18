@@ -373,13 +373,8 @@ if (barra && porcentagem && textoLoading) {
 
     if (progresso === 100) {
       if (dog) {
-        dog.style.opacity = "0";
-
-        setTimeout(() => {
-          dog.classList.remove("run");
-          dog.classList.add("lying");
-          dog.style.opacity = "1";
-        }, 150);
+        dog.classList.remove("run");
+        dog.classList.add("lying");
       }
 
       clearInterval(intervalo);
@@ -388,7 +383,7 @@ if (barra && porcentagem && textoLoading) {
 
       setTimeout(() => {
         finalizarLoading();
-      }, 250);
+      }, 100);
     }
   }, 120);
 }
