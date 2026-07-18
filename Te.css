@@ -1017,6 +1017,8 @@ header {
 =========================== */
 
 .botao-galeria {
+  position: relative;
+  z-index: 2;
   display: inline-block;
   margin-top: 25px;
   padding: 15px 28px;
@@ -1121,6 +1123,7 @@ header {
   #historia .linha {
     display: flex;
     flex-wrap: nowrap;
+    justify-content: flex-start;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
