@@ -61,50 +61,6 @@ header.motivos-header {
   padding-top: 20px;
 }
 
-@media (max-width: 768px) {
-  .voltar {
-    top: 15px;
-    left: 15px;
-
-    padding: 10px 18px;
-  }
-
-  .motivos-header {
-    padding: 90px 20px 10px;
-  }
-
-  .motivos-header h1 {
-    font-size: 34px;
-  }
-
-  .motivos-header p {
-    font-size: 15px;
-  }
-        .intro-card {
-    width: 88%;
-  }
-
-  .f1 {
-    font-size: 20px;
-  }
-
-  .f2 {
-    font-size: 24px;
-    margin: 20px 0;
-  }
-
-  .f3 {
-    font-size: 30px;
-  }
-
-  #comecar {
-    margin-top: 40px;
-    padding: 14px 32px;
-    font-size: 17px;
-  }
-        
-}
-
 #introMotivos {
   position: fixed;
   inset: 0;
@@ -190,5 +146,55 @@ header.motivos-header {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* ===================================
+        RESPONSIVO CELULAR
+        (fica por último de propósito,
+        pra sempre vencer as regras de cima)
+=================================== */
+
+@media (max-width: 768px) {
+  .voltar {
+    top: 15px;
+    left: 15px;
+
+    padding: 10px 18px;
+  }
+
+  .motivos-header {
+    padding: 90px 20px 10px;
+  }
+
+  .motivos-header h1 {
+    font-size: 34px;
+  }
+
+  .motivos-header p {
+    font-size: 15px;
+  }
+
+  .intro-card {
+    width: 88%;
+  }
+
+  .f1 {
+    font-size: 20px;
+  }
+
+  .f2 {
+    font-size: 24px;
+    margin: 20px 0;
+  }
+
+  .f3 {
+    font-size: 30px;
+  }
+
+  #comecar {
+    margin-top: 40px;
+    padding: 14px 32px;
+    font-size: 17px;
   }
 }
