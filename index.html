@@ -497,7 +497,7 @@
       <button
         class="opcao-carinho"
         id="opcaoAbraco"
-        data-gif="Imagens/abraço.gif"
+        data-gif="Imagens/abraco.gif"
         aria-label="Abraço"
       >
         🤗
@@ -526,6 +526,33 @@
 
     <div id="overlayBeijo">
       <img id="imgOverlayBeijo" src="" alt="Carinho" />
+    </div>
+
+    <button id="botaoConfig" aria-label="Abrir configurações">⚙️</button>
+
+    <div id="popupConfig" class="popup">
+      <div class="popup-conteudo">
+        <span class="popup-icone">⚙️</span>
+
+        <h2>Configurações</h2>
+
+        <div class="config-opcao">
+          <span>Trocar personagens</span>
+
+          <label class="switch">
+            <input type="checkbox" id="toggleTrocarPersonagens" />
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <img
+          id="previewTrocaPersonagens"
+          src="Imagens/imagem-trocar.gif"
+          alt="Prévia dos personagens"
+        />
+
+        <button id="fecharConfig">Fechar</button>
+      </div>
     </div>
 
     <script src="Amo.js"></script>
