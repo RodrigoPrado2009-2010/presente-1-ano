@@ -442,6 +442,7 @@ if (menuCarinhos && botaoMenuCarinhos && overlayBeijo && imgOverlayBeijo) {
   });
 
   const capituloFinal = document.getElementById("capitulo-final");
+  const botaoConfig = document.getElementById("botaoConfig");
 
   if (capituloFinal) {
     const observerBeijo = new IntersectionObserver(
@@ -451,8 +452,12 @@ if (menuCarinhos && botaoMenuCarinhos && overlayBeijo && imgOverlayBeijo) {
             menuCarinhos.classList.add("escondido");
             menuCarinhos.classList.remove("aberto");
             botaoMenuCarinhos.textContent = "💌";
+
+            if (botaoConfig) botaoConfig.classList.add("escondido");
           } else {
             menuCarinhos.classList.remove("escondido");
+
+            if (botaoConfig) botaoConfig.classList.remove("escondido");
           }
         });
       },
@@ -461,6 +466,87 @@ if (menuCarinhos && botaoMenuCarinhos && overlayBeijo && imgOverlayBeijo) {
 
     observerBeijo.observe(capituloFinal);
   }
+}
+
+// ===============================
+// ⚙️ CONFIGURAÇÕES - TROCAR PERSONAGENS
+// ===============================
+
+const botaoConfigEl = document.getElementById("botaoConfig");
+const popupConfig = document.getElementById("popupConfig");
+const fecharConfig = document.getElementById("fecharConfig");
+const toggleTrocarPersonagens = document.getElementById(
+  "toggleTrocarPersonagens",
+);
+const previewTrocaPersonagens = document.getElementById(
+  "previewTrocaPersonagens",
+);
+
+const gifsOriginais = {
+  opcaoBeijo: "Imagens/beiju.gif",
+  opcaoAbraco: "Imagens/abraco.gif",
+  opcaoDormindo: "Imagens/dormindo.gif",
+};
+
+const gifsTrocados = {
+  opcaoBeijo: "Imagens/bubu-kiss.gif",
+  opcaoAbraco: "Imagens/dudu-hug.gif",
+  opcaoDormindo: "Imagens/budu-sleep.gif",
+};
+
+function aplicarPersonagens(trocado) {
+  Object.keys(gifsOriginais).forEach((id) => {
+    const opcao = document.getElementById(id);
+    if (!opcao) return;
+    opcao.dataset.gif = trocado ? gifsTrocados[id] : gifsOriginais[id];
+  });
+}
+
+if (
+  botaoConfigEl &&
+  popupConfig &&
+  fecharConfig &&
+  toggleTrocarPersonagens &&
+  previewTrocaPersonagens
+) {
+  const trocadoSalvo = localStorage.getItem("personagensTrocados") === "true";
+
+  toggleTrocarPersonagens.checked = trocadoSalvo;
+  previewTrocaPersonagens.src = trocadoSalvo
+    ? "Imagens/bubu-trocado.gif"
+    : "Imagens/imagem-trocar.gif";
+  aplicarPersonagens(trocadoSalvo);
+
+  botaoConfigEl.addEventListener("click", () => {
+    if (navigator.vibrate) {
+      navigator.vibrate(20);
+    }
+
+    popupConfig.classList.add("ativo");
+  });
+
+  toggleTrocarPersonagens.addEventListener("change", () => {
+    previewTrocaPersonagens.src = toggleTrocarPersonagens.checked
+      ? "Imagens/bubu-trocado.gif"
+      : "Imagens/imagem-trocar.gif";
+  });
+
+  function fecharConfiguracoes() {
+    popupConfig.classList.remove("ativo");
+
+    const trocado = toggleTrocarPersonagens.checked;
+
+    aplicarPersonagens(trocado);
+    localStorage.setItem("personagensTrocados", trocado);
+  }
+
+  fecharConfig.addEventListener("click", fecharConfiguracoes);
+
+  popupConfig.addEventListener("click", (e) => {
+    if (e.target === popupConfig) {
+      fecharConfiguracoes();
+    }
+  });
 }
 
 // ===============================
