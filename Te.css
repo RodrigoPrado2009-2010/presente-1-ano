@@ -831,7 +831,7 @@ header {
 
   animation: dogRun 0.6s steps(8) infinite;
 
-  transition: left 0.1s linear, bottom 0.3s ease, opacity 0.15s ease;
+  transition: left 0.1s linear, bottom 0.3s ease;
 }
 
 @keyframes dogRun {
@@ -855,7 +855,7 @@ header {
   animation: dogLie 0.9s steps(7) forwards;
 
   left: inherit;
-  bottom: -18px; /* ajuste fino */
+  bottom: -25px;
 }
 
 @keyframes dogLie {
