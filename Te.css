@@ -645,7 +645,7 @@ header {
 .sonhos {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   gap: 45px;
   flex-wrap: wrap;
   width: 100%;
