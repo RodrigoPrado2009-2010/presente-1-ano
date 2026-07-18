@@ -546,25 +546,32 @@
   transform: scale(0.9) !important;
 }
 
-#menuCarinhos.aberto #opcaoAbraco {
+#menuCarinhos.aberto #opcaoDormindo {
   opacity: 1;
-  transform: translate(-85px, 0) scale(1);
+  transform: translate(0, -95px) scale(1);
   pointer-events: auto;
   transition-delay: 0s;
 }
 
 #menuCarinhos.aberto #opcaoBeijo {
   opacity: 1;
-  transform: translate(-60px, -60px) scale(1);
+  transform: translate(-48px, -82px) scale(1);
   pointer-events: auto;
   transition-delay: 0.05s;
 }
 
-#menuCarinhos.aberto #opcaoDormindo {
+#menuCarinhos.aberto #opcaoAbraco {
   opacity: 1;
-  transform: translate(0, -85px) scale(1);
+  transform: translate(-82px, -48px) scale(1);
   pointer-events: auto;
   transition-delay: 0.1s;
+}
+
+#menuCarinhos.aberto #opcaoConfig {
+  opacity: 1;
+  transform: translate(-95px, 0) scale(1);
+  pointer-events: auto;
+  transition-delay: 0.15s;
 }
 
 /* ===========================
@@ -617,51 +624,13 @@
 }
 
 /* ===========================
-     BOTÃO DE CONFIGURAÇÕES
+     OPÇÃO DE CONFIGURAÇÕES
+     (dentro do leque)
 =========================== */
 
-#botaoConfig {
-  display: none;
-
-  position: fixed;
-  left: 18px;
-  bottom: 22px;
-
-  width: 52px;
-  height: 52px;
-
-  align-items: center;
-  justify-content: center;
-
-  border: none;
+#opcaoConfig {
   border-radius: 50%;
-
-  background: linear-gradient(135deg, #6b6b6b, #3f3f3f);
-
-  color: white;
-  font-size: 22px;
-
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-
-  z-index: 5000;
-
-  transition: 0.25s;
-}
-
-#botaoConfig:active {
-  transform: scale(0.88);
-}
-
-#botaoConfig.escondido {
-  opacity: 0;
-  transform: scale(0.6);
-  pointer-events: none;
-}
-
-@media (max-width: 768px) {
-  #botaoConfig {
-    display: flex;
-  }
+  border: 2px solid #b8872d;
 }
 
 /* ===========================
