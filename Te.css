@@ -831,7 +831,7 @@ header {
 
   animation: dogRun 0.6s steps(8) infinite;
 
-  transition: left 0.1s linear;
+  transition: left 0.1s linear, bottom 0.3s ease, opacity 0.15s ease;
 }
 
 @keyframes dogRun {
