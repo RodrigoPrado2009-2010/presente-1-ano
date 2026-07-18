@@ -393,7 +393,7 @@ if (barra && porcentagem && textoLoading) {
 
 const menuCarinhos = document.getElementById("menuCarinhos");
 const botaoMenuCarinhos = document.getElementById("botaoMenuCarinhos");
-const opcoesCarinho = document.querySelectorAll(".opcao-carinho");
+const opcoesCarinho = document.querySelectorAll(".opcao-carinho[data-gif]");
 const overlayBeijo = document.getElementById("overlayBeijo");
 const imgOverlayBeijo = document.getElementById("imgOverlayBeijo");
 let beijoTimeout;
@@ -442,7 +442,6 @@ if (menuCarinhos && botaoMenuCarinhos && overlayBeijo && imgOverlayBeijo) {
   });
 
   const capituloFinal = document.getElementById("capitulo-final");
-  const botaoConfig = document.getElementById("botaoConfig");
 
   if (capituloFinal) {
     const observerBeijo = new IntersectionObserver(
@@ -452,12 +451,8 @@ if (menuCarinhos && botaoMenuCarinhos && overlayBeijo && imgOverlayBeijo) {
             menuCarinhos.classList.add("escondido");
             menuCarinhos.classList.remove("aberto");
             botaoMenuCarinhos.textContent = "💌";
-
-            if (botaoConfig) botaoConfig.classList.add("escondido");
           } else {
             menuCarinhos.classList.remove("escondido");
-
-            if (botaoConfig) botaoConfig.classList.remove("escondido");
           }
         });
       },
@@ -472,7 +467,7 @@ if (menuCarinhos && botaoMenuCarinhos && overlayBeijo && imgOverlayBeijo) {
 // ⚙️ CONFIGURAÇÕES - TROCAR PERSONAGENS
 // ===============================
 
-const botaoConfigEl = document.getElementById("botaoConfig");
+const opcaoConfig = document.getElementById("opcaoConfig");
 const popupConfig = document.getElementById("popupConfig");
 const fecharConfig = document.getElementById("fecharConfig");
 const toggleTrocarPersonagens = document.getElementById(
@@ -503,7 +498,7 @@ function aplicarPersonagens(trocado) {
 }
 
 if (
-  botaoConfigEl &&
+  opcaoConfig &&
   popupConfig &&
   fecharConfig &&
   toggleTrocarPersonagens &&
@@ -517,10 +512,13 @@ if (
     : "Imagens/imagem-trocar.gif";
   aplicarPersonagens(trocadoSalvo);
 
-  botaoConfigEl.addEventListener("click", () => {
+  opcaoConfig.addEventListener("click", () => {
     if (navigator.vibrate) {
       navigator.vibrate(20);
     }
+
+    if (menuCarinhos) menuCarinhos.classList.remove("aberto");
+    if (botaoMenuCarinhos) botaoMenuCarinhos.textContent = "💌";
 
     popupConfig.classList.add("ativo");
   });
