@@ -536,13 +536,22 @@
     </div>
 
     <div id="popupConfig" class="popup">
-      <div class="popup-conteudo">
+      <div class="popup-conteudo popup-config-conteudo">
         <span class="popup-icone">⚙️</span>
 
         <h2>Configurações</h2>
 
-        <div class="config-opcao">
-          <span>Trocar personagens</span>
+        <p class="config-subtitulo">
+          Personalize a experiência do menu de carinhos
+        </p>
+
+        <div class="config-card">
+          <div class="config-card-texto">
+            <span class="config-card-titulo">Trocar personagens</span>
+            <span class="config-card-descricao"
+              >Troca os personagens usados nos gifs de carinho</span
+            >
+          </div>
 
           <label class="switch">
             <input type="checkbox" id="toggleTrocarPersonagens" />
@@ -550,11 +559,14 @@
           </label>
         </div>
 
-        <img
-          id="previewTrocaPersonagens"
-          src="Imagens/imagem-trocar.gif"
-          alt="Prévia dos personagens"
-        />
+        <div class="config-preview-box">
+          <span class="config-preview-label">Prévia</span>
+          <img
+            id="previewTrocaPersonagens"
+            src="Imagens/imagem-trocar.gif"
+            alt="Prévia dos personagens"
+          />
+        </div>
 
         <button id="fecharConfig">Fechar</button>
       </div>
