@@ -670,6 +670,10 @@
   text-align: left;
 }
 
+.config-card + .config-card {
+  margin-top: 14px;
+}
+
 .config-card-texto {
   display: flex;
   flex-direction: column;
@@ -799,4 +803,183 @@
 
 #fecharConfig:hover {
   transform: scale(1.05);
+}
+
+/* ===============================
+        MODO ESCURO
+=============================== */
+
+body.modo-escuro {
+  color: #d8cfc0;
+}
+
+body.modo-escuro {
+  background-image: url("Imagens/FundoMobileDark.png");
+}
+
+/* Nossa história */
+body.modo-escuro .momento,
+body.modo-escuro #trajetoria p {
+  background: rgba(25, 20, 12, 0.78);
+}
+
+body.modo-escuro .momento p {
+  color: #c7bfb0;
+}
+
+body.modo-escuro #piqeno {
+  color: #b7b0a3;
+}
+
+body.modo-escuro #historia h2,
+body.modo-escuro #trajetoria h2 {
+  color: #f2e4c4;
+}
+
+/* Carta */
+body.modo-escuro .titulo-carta {
+  color: #f2e4c4;
+}
+
+body.modo-escuro .envelope {
+  background: linear-gradient(145deg, #2b2b2b, #161616);
+  border-color: #d4af37;
+}
+
+body.modo-escuro .aba {
+  border-top-color: #3a3a3a;
+}
+
+body.modo-escuro .envelope::before {
+  border-bottom-color: #202020;
+}
+
+body.modo-escuro .carta-aberta {
+  background: rgba(20, 16, 10, 0.94);
+}
+
+body.modo-escuro .carta-aberta p {
+  color: #d8cfc0;
+}
+
+/* Contador */
+body.modo-escuro #tempo h2 {
+  color: #f2e4c4;
+}
+
+body.modo-escuro .subtitulo {
+  color: #c7bfb0;
+}
+
+body.modo-escuro .caixa {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+body.modo-escuro .caixa p {
+  color: #c7bfb0;
+}
+
+/* Nosso futuro */
+body.modo-escuro #futuro h2 {
+  color: #f2e4c4;
+}
+
+body.modo-escuro .introducao {
+  color: #c7bfb0;
+}
+
+body.modo-escuro .sonho {
+  background: rgba(25, 20, 12, 0.8);
+}
+
+body.modo-escuro .sonho h3 {
+  color: #f2e4c4;
+}
+
+body.modo-escuro .sonho p {
+  color: #c7bfb0;
+}
+
+body.modo-escuro .frase-final {
+  background: rgba(25, 20, 12, 0.72);
+  color: #f2e4c4;
+}
+
+/* 365 motivos (prévia) */
+body.modo-escuro #motivos h2 {
+  color: #f2e4c4;
+}
+
+body.modo-escuro .motivos-intro {
+  color: #c7bfb0;
+}
+
+body.modo-escuro .motivo {
+  background: rgba(25, 20, 12, 0.8);
+  border-color: rgba(212, 175, 55, 0.35);
+}
+
+body.modo-escuro .motivo p {
+  color: #c7bfb0;
+}
+
+body.modo-escuro #motivos::after {
+  background: linear-gradient(to bottom, transparent, #0a0806);
+}
+
+/* Capítulo final */
+body.modo-escuro #capitulo-final {
+  background: #0a0806;
+}
+
+body.modo-escuro .final-frase h2,
+body.modo-escuro .final-proximo h1 {
+  color: #f2e4c4;
+}
+
+body.modo-escuro .final-datas,
+body.modo-escuro .final-dias {
+  color: #c7bfb0;
+}
+
+body.modo-escuro .final-folha {
+  background: #14110c;
+  border-color: rgba(212, 175, 55, 0.3);
+}
+
+body.modo-escuro .final-folha h2 {
+  color: #f2e4c4;
+}
+
+body.modo-escuro .final-folha p {
+  color: #c7bfb0;
+}
+
+body.modo-escuro .final-barra {
+  background: #2a2a2a;
+}
+
+/* Popups (inclusive o de configurações) */
+body.modo-escuro .popup-conteudo {
+  background: #14110c;
+}
+
+body.modo-escuro .popup h2 {
+  color: #f2e4c4;
+}
+
+body.modo-escuro .popup p,
+body.modo-escuro .config-subtitulo,
+body.modo-escuro .config-card-descricao {
+  color: #a79f92;
+}
+
+body.modo-escuro .config-card,
+body.modo-escuro .config-preview-box {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(212, 175, 55, 0.3);
+}
+
+body.modo-escuro .config-card-titulo {
+  color: #f2e4c4;
 }
