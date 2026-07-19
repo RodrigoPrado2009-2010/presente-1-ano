@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Trajetória desse Presente ❤️</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      if (window.screen.width <= 768) {
+        document.documentElement.classList.add("is-mobile-device");
+      }
+    </script>
+
+    <link rel="stylesheet" href="Te.css?v=6" />
+    <link rel="stylesheet" href="Trajetoria.css" />
+  </head>
+
+  <body>
+    <script>
+      if (localStorage.getItem("modoEscuro") === "true") {
+        document.body.classList.add("modo-escuro");
+        document.documentElement.classList.add("modo-escuro");
+      }
+    </script>
+
+    <div id="introTrajetoria">
+      <div class="intro-card">
+        <p class="frase f1">Essa página conta</p>
+
+        <p class="frase f2">como esse presente foi criado</p>
+
+        <h1 class="frase f3">
+          Dia após dia, com todo carinho, só pra Você ❤️
+        </h1>
+
+        <button id="comecar">Começar a ler</button>
+      </div>
+    </div>
+    <div class="page-transition"></div>
+
+    <a href="index.html#ao-voltar" class="voltar">← Voltar</a>
+
+    <header class="trajetoria-header">
+      <h1>Trajetória desse Presente ❤️</h1>
+      <p>Dia a dia de como eu criei esse site só pra Você🤍</p>
+    </header>
+
+    <section id="trajetoria-intro">
+      <p>
+        Eu já venho planejando esse presente faz tempo, mas eu quis esperar
+        essas férias pra poder começar de vez esse site pra ter mais tempo pra
+        focar nele, porque com tudo que eu aprendi do curso que eu tou
+        fazendo, eu queira botar em pratica de uma forma diferente, com um
+        significado especial. Então eu pensei: Já que eu tou aprendendo a
+        criar um site, por que não fazer algo único, criando um site especial
+        só pro Meu Amor?
+      </p>
+    </section>
+
+    <section id="dias">
+      <div class="dia">
+        <span>❤️ Dia 14/07/2026</span>
+        <p>
+          Então hoje, 14/07/2026 eu comecei a criar esse site, eu fiz esse
+          fundo no canva, fiz o começo do site, fiz a cartinha de 1 ano nosso,
+          o contador de tempo do nosso Namoro e a parte do Nosso Futuro, mas
+          eu ainda vou adicionar bem mais coisas pra ficar muitu mais
+          bonitinho o site ❤
+        </p>
+      </div>
+
+      <div class="dia">
+        <span>❤️ Dia 15/07/2026</span>
+        <p>
+          Eu fiz a página do Capítulo Final, fiz um fundo pra colocar pra
+          quando acessar pelo celular o site, arrumei varios erros, fiz 25
+          motivos pra te amar e fiz a página do próximo capítulo.
+        </p>
+      </div>
+
+      <div class="dia">
+        <span>❤️ Dia 16/07/2026</span>
+        <p>
+          Eu fiz mais 25 motivos pra te amar, fiz a nossa galeria de fotos,
+          arrumei mais erros e 1 erro que fiquei um tempão tentando arrumar
+          por causa qui o papel de parede do celular não tava aparecendo
+          quando abria o site pelo celular, e deixei mais bonitinhu o site, eu
+          acho que ainda falta bastanti coisa pra terminar o site.
+        </p>
+      </div>
+
+      <div class="dia">
+        <span>❤️ Dia 17/07/2026</span>
+        <p>
+          Eu fiz a página dos Motivos pra te amar e coloquei mais 25 motivos,
+          eu coloquei um cachorrinho pra correr junto com a barrinah de
+          carregar (por isso que eu tava perguntando qual raça de cachorro
+          era sua favorita mmor ksksksskssk), arrumei maiss erross aindaa
+        </p>
+      </div>
+
+      <div class="dia">
+        <span>❤️ Dia 18/07/2026</span>
+        <p>Em breve...</p>
+      </div>
+
+      <!--
+        ============================================
+        CONTINUE ADICIONANDO OS DIAS AQUI EMBAIXO,
+        sempre nesse formato:
+
+        <div class="dia">
+          <span>❤️ Dia XX/XX/2026</span>
+          <p>Aqui vai o texto do dia</p>
+        </div>
+        ============================================
+      -->
+    </section>
+
+    <script>
+      const transition = document.querySelector(".page-transition");
+
+      document.querySelectorAll("a[href]").forEach((link) => {
+        const href = link.getAttribute("href");
+
+        if (href && !href.startsWith("#") && !href.startsWith("http")) {
+          link.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            transition.classList.add("ativa");
+
+            setTimeout(() => {
+              window.location.href = href;
+            }, 450);
+          });
+        }
+      });
+      const intro = document.getElementById("introTrajetoria");
+      const botao = document.getElementById("comecar");
+
+      botao.onclick = () => {
+        intro.style.opacity = "0";
+
+        setTimeout(() => {
+          intro.style.display = "none";
+        }, 800);
+      };
+    </script>
+  </body>
+</html>

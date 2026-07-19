@@ -1,0 +1,379 @@
+/* ===================================
+        VOLTAR
+=================================== */
+
+.voltar {
+  position: fixed;
+
+  top: 25px;
+  left: 25px;
+
+  padding: 12px 24px;
+
+  background: #fff;
+
+  color: #444;
+
+  text-decoration: none;
+
+  border-radius: 999px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+  transition: 0.3s;
+
+  z-index: 1000;
+}
+
+.voltar:hover {
+  transform: translateY(-3px);
+}
+
+/* ===================================
+        CABEÇALHO DA PÁGINA
+=================================== */
+
+header.trajetoria-header {
+  display: block;
+
+  padding: 110px 20px 20px;
+  text-align: center;
+}
+
+.trajetoria-header h1 {
+  font-size: 62px;
+  color: #d4af37;
+  font-family: "Great Vibes", cursive;
+}
+
+.trajetoria-header p {
+  margin-top: 10px;
+  font-size: 17px;
+  color: #666;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ===================================
+        TEXTO DE INTRODUÇÃO
+=================================== */
+
+#trajetoria-intro {
+  display: flex;
+  justify-content: center;
+
+  padding: 20px 20px 10px;
+}
+
+#trajetoria-intro p {
+  max-width: 800px;
+
+  background: rgba(255, 235, 180, 0.75);
+
+  padding: 30px;
+
+  border-radius: 30px;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  line-height: 30px;
+  color: #555;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* ===================================
+        DIAS (cards)
+=================================== */
+
+#dias {
+  position: relative;
+
+  padding: 60px 20px 120px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+#dias::after {
+  content: "";
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 180px;
+
+  background: linear-gradient(to bottom, transparent, #fff);
+
+  pointer-events: none;
+}
+
+.dia {
+  width: 850px;
+  max-width: 95%;
+
+  background: rgba(255, 255, 255, 0.82);
+
+  backdrop-filter: blur(10px);
+
+  padding: 35px;
+
+  border-radius: 22px;
+
+  margin-bottom: 25px;
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+
+  transition: 0.35s;
+
+  border: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+.dia:hover {
+  transform: translateY(-8px);
+
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.18);
+}
+
+.dia span {
+  display: block;
+
+  font-size: 26px;
+
+  color: #d4af37;
+
+  font-weight: bold;
+
+  margin-bottom: 18px;
+
+  font-family: "Lora", serif;
+}
+
+.dia p {
+  font-size: 22px;
+
+  line-height: 36px;
+
+  color: #444;
+
+  font-family: "Cormorant Garamond", serif;
+}
+
+/* ===================================
+        INTRO (tela cheia)
+=================================== */
+
+#introTrajetoria {
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 252, 246, 0.97);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999999;
+  transition: 0.8s;
+}
+
+.intro-card {
+  text-align: center;
+  width: min(90%, 700px);
+}
+
+.frase {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.f1 {
+  animation: entrar 0.9s forwards;
+}
+
+.f2 {
+  animation: entrar 0.9s 0.9s forwards;
+}
+
+.f3 {
+  animation: entrar 1s 2s forwards;
+}
+
+.f1 {
+  font-size: 30px;
+}
+
+.f2 {
+  font-size: 36px;
+  margin: 30px 0;
+}
+
+.f3 {
+  font-size: 52px;
+  line-height: 1.3;
+  color: #b8872d;
+}
+
+#comecar {
+  margin-top: 60px;
+
+  opacity: 0;
+  transform: translateY(30px);
+
+  animation: entrar 0.9s 3.3s forwards;
+
+  padding: 18px 45px;
+
+  border: none;
+  border-radius: 45px;
+
+  background: linear-gradient(135deg, #d4af37, #b8872d);
+
+  color: white;
+
+  font-size: 20px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+#comecar:hover {
+  transform: scale(1.05);
+}
+
+@keyframes entrar {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===================================
+        RESPONSIVO CELULAR
+        (fica por último de propósito,
+        pra sempre vencer as regras de cima)
+=================================== */
+
+@media (max-width: 768px) {
+  .voltar {
+    top: 15px;
+    left: 15px;
+
+    padding: 10px 18px;
+  }
+
+  .trajetoria-header {
+    padding: 90px 20px 10px;
+  }
+
+  .trajetoria-header h1 {
+    font-size: 34px;
+  }
+
+  .trajetoria-header p {
+    font-size: 15px;
+  }
+
+  #trajetoria-intro p {
+    font-size: 16px;
+    line-height: 27px;
+    padding: 22px;
+  }
+
+  .dia p {
+    font-size: 18px;
+    line-height: 29px;
+  }
+
+  .intro-card {
+    width: 88%;
+  }
+
+  .f1 {
+    font-size: 20px;
+  }
+
+  .f2 {
+    font-size: 24px;
+    margin: 20px 0;
+  }
+
+  .f3 {
+    font-size: 30px;
+  }
+
+  #comecar {
+    margin-top: 40px;
+    padding: 14px 32px;
+    font-size: 17px;
+  }
+}
+
+/* ===================================
+        MODO ESCURO
+=================================== */
+
+@media (min-width: 769px) {
+  body.modo-escuro {
+    background-image: url("Imagens/FundoMobileDark.png");
+  }
+}
+
+@media (max-width: 768px) {
+  html.modo-escuro {
+    background: url("Imagens/FundoMobileDark.png") center top / cover
+      no-repeat fixed;
+  }
+
+  body.modo-escuro {
+    background: transparent;
+  }
+}
+
+body.modo-escuro {
+  color: #d8cfc0;
+}
+
+body.modo-escuro .voltar {
+  background: #14110c;
+  color: #d8cfc0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+body.modo-escuro .trajetoria-header p {
+  color: #c7bfb0;
+}
+
+body.modo-escuro #introTrajetoria {
+  background: rgba(10, 8, 6, 0.97);
+}
+
+body.modo-escuro .f1,
+body.modo-escuro .f2 {
+  color: #d8cfc0;
+}
+
+body.modo-escuro #trajetoria-intro p {
+  background: rgba(25, 20, 12, 0.78);
+  color: #c7bfb0;
+}
+
+body.modo-escuro #dias::after {
+  background: linear-gradient(to bottom, transparent, #0a0806);
+}
+
+body.modo-escuro .dia {
+  background: rgba(25, 20, 12, 0.8);
+  border-color: rgba(212, 175, 55, 0.35);
+}
+
+body.modo-escuro .dia p {
+  color: #c7bfb0;
+}
