@@ -203,8 +203,13 @@ header.motivos-header {
         MODO ESCURO
 =================================== */
 
+@media (min-width: 769px) {
+  body.modo-escuro {
+    background-image: url("Imagens/FundoMobileDark.png");
+  }
+}
+
 body.modo-escuro {
-  background-image: url("Imagens/FundoMobileDark.png");
   color: #d8cfc0;
 }
 
@@ -212,6 +217,10 @@ body.modo-escuro {
   html.modo-escuro {
     background: url("Imagens/FundoMobileDark.png") center top / cover
       no-repeat fixed;
+  }
+
+  body.modo-escuro {
+    background: transparent;
   }
 }
 
