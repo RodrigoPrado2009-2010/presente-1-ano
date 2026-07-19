@@ -497,6 +497,24 @@ function aplicarPersonagens(trocado) {
   });
 }
 
+const toggleModoEscuro = document.getElementById("toggleModoEscuro");
+
+if (toggleModoEscuro) {
+  const escuroSalvo = localStorage.getItem("modoEscuro") === "true";
+
+  toggleModoEscuro.checked = escuroSalvo;
+  document.body.classList.toggle("modo-escuro", escuroSalvo);
+
+  toggleModoEscuro.addEventListener("change", () => {
+    if (navigator.vibrate) {
+      navigator.vibrate(20);
+    }
+
+    document.body.classList.toggle("modo-escuro", toggleModoEscuro.checked);
+    localStorage.setItem("modoEscuro", toggleModoEscuro.checked);
+  });
+}
+
 if (
   opcaoConfig &&
   popupConfig &&
