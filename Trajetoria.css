@@ -377,3 +377,7 @@ body.modo-escuro .dia {
 body.modo-escuro .dia p {
   color: #c7bfb0;
 }
+
+body.modo-escuro .page-transition {
+  background: #0a0806;
+}
