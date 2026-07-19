@@ -384,3 +384,52 @@ header p {
 .page-transition.ativa {
   opacity: 1;
 }
+
+/* ===================================
+        MODO ESCURO
+=================================== */
+
+body.modo-escuro {
+  background: #0a0806;
+  color: #d8cfc0;
+}
+
+body.modo-escuro .bg {
+  background:
+    radial-gradient(circle at top, rgba(212, 175, 55, 0.12), transparent 45%),
+    radial-gradient(
+      circle at bottom,
+      rgba(212, 175, 55, 0.1),
+      transparent 45%
+    );
+}
+
+body.modo-escuro .voltar {
+  background: #14110c;
+  color: #d8cfc0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+body.modo-escuro header h1 {
+  color: #f2e4c4;
+}
+
+body.modo-escuro header p {
+  color: #c7bfb0;
+}
+
+body.modo-escuro .slide.final h2 {
+  color: #f2e4c4;
+}
+
+body.modo-escuro .slide.final p {
+  color: #c7bfb0;
+}
+
+body.modo-escuro .indicadores span {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+body.modo-escuro .page-transition {
+  background: #0a0806;
+}
