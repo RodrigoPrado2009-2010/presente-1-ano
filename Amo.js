@@ -34,6 +34,10 @@ function abrirCarta() {
   const envelope = document.querySelector(".envelope");
   const carta = document.querySelector(".carta-aberta");
 
+  if (envelope.classList.contains("abrindo")) {
+    return;
+  }
+
   if (navigator.vibrate) {
     navigator.vibrate(35);
   }
@@ -48,7 +52,7 @@ function abrirCarta() {
       carta.style.opacity = "1";
       carta.style.transform = "scale(1)";
     }, 50);
-  }, 550);
+  }, 1500);
 }
 
 // ===============================
