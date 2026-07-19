@@ -15,6 +15,12 @@
   </head>
 
   <body>
+    <script>
+      if (localStorage.getItem("modoEscuro") === "true") {
+        document.body.classList.add("modo-escuro");
+      }
+    </script>
+
     <div class="page-transition"></div>
     <div class="bg"></div>
 
