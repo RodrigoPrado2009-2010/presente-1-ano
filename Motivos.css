@@ -255,3 +255,7 @@ body.modo-escuro .motivo {
 body.modo-escuro .motivo p {
   color: #c7bfb0;
 }
+
+body.modo-escuro .page-transition {
+  background: #0a0806;
+}
