@@ -198,3 +198,44 @@ header.motivos-header {
     font-size: 17px;
   }
 }
+
+/* ===================================
+        MODO ESCURO
+=================================== */
+
+body.modo-escuro {
+  background-image: url("Imagens/FundoMobileDark.png");
+  color: #d8cfc0;
+}
+
+body.modo-escuro .voltar {
+  background: #14110c;
+  color: #d8cfc0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+body.modo-escuro .motivos-header p {
+  color: #c7bfb0;
+}
+
+body.modo-escuro #introMotivos {
+  background: rgba(10, 8, 6, 0.97);
+}
+
+body.modo-escuro .f1,
+body.modo-escuro .f2 {
+  color: #d8cfc0;
+}
+
+body.modo-escuro #motivos::after {
+  background: linear-gradient(to bottom, transparent, #0a0806);
+}
+
+body.modo-escuro .motivo {
+  background: rgba(25, 20, 12, 0.8);
+  border-color: rgba(212, 175, 55, 0.35);
+}
+
+body.modo-escuro .motivo p {
+  color: #c7bfb0;
+}
