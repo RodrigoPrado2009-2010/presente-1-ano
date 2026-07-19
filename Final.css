@@ -813,14 +813,20 @@ body.modo-escuro {
   color: #d8cfc0;
 }
 
-body.modo-escuro {
-  background-image: url("Imagens/FundoMobileDark.png");
+@media (min-width: 769px) {
+  body.modo-escuro {
+    background-image: url("Imagens/FundoMobileDark.png");
+  }
 }
 
 @media (max-width: 768px) {
   html.modo-escuro {
     background: url("Imagens/FundoMobileDark.png") center top / cover
       no-repeat fixed;
+  }
+
+  body.modo-escuro {
+    background: transparent;
   }
 }
 
