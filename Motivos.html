@@ -30,6 +30,12 @@
   </head>
 
   <body>
+    <script>
+      if (localStorage.getItem("modoEscuro") === "true") {
+        document.body.classList.add("modo-escuro");
+      }
+    </script>
+
     <div id="introMotivos">
       <div class="intro-card">
         <p class="frase f1">Essa página tem <span>365 motivos</span></p>
