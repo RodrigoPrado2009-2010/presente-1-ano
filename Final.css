@@ -996,3 +996,7 @@ body.modo-escuro .config-preview-box {
 body.modo-escuro .config-card-titulo {
   color: #f2e4c4;
 }
+
+body.modo-escuro .page-transition {
+  background: #0a0806;
+}
