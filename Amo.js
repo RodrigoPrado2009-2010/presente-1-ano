@@ -504,6 +504,7 @@ if (toggleModoEscuro) {
 
   toggleModoEscuro.checked = escuroSalvo;
   document.body.classList.toggle("modo-escuro", escuroSalvo);
+  document.documentElement.classList.toggle("modo-escuro", escuroSalvo);
 
   toggleModoEscuro.addEventListener("change", () => {
     if (navigator.vibrate) {
@@ -511,6 +512,10 @@ if (toggleModoEscuro) {
     }
 
     document.body.classList.toggle("modo-escuro", toggleModoEscuro.checked);
+    document.documentElement.classList.toggle(
+      "modo-escuro",
+      toggleModoEscuro.checked,
+    );
     localStorage.setItem("modoEscuro", toggleModoEscuro.checked);
   });
 }
