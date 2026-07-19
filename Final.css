@@ -740,11 +740,11 @@
   transition: 0.3s;
 }
 
-#toggleTrocarPersonagens:checked + .slider {
+.switch input:checked + .slider {
   background: linear-gradient(135deg, #d4af37, #b8872d);
 }
 
-#toggleTrocarPersonagens:checked + .slider::before {
+.switch input:checked + .slider::before {
   transform: translateX(22px);
 }
 
