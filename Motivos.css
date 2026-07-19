@@ -208,6 +208,13 @@ body.modo-escuro {
   color: #d8cfc0;
 }
 
+@media (max-width: 768px) {
+  html.modo-escuro {
+    background: url("Imagens/FundoMobileDark.png") center top / cover
+      no-repeat fixed;
+  }
+}
+
 body.modo-escuro .voltar {
   background: #14110c;
   color: #d8cfc0;
