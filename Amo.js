@@ -24,17 +24,39 @@ function criarCoracao() {
   }, 7000);
 }
 
-setInterval(criarCoracao, 300);
+let coracaoInterval = setInterval(criarCoracao, 300);
+
+const capituloFinalCoracoes = document.getElementById("capitulo-final");
+
+if (capituloFinalCoracoes) {
+  const observerCoracoes = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          clearInterval(coracaoInterval);
+          coracaoInterval = null;
+
+          area.querySelectorAll(".coracao").forEach((c) => c.remove());
+        } else if (!coracaoInterval) {
+          coracaoInterval = setInterval(criarCoracao, 300);
+        }
+      });
+    },
+    { threshold: 0 },
+  );
+
+  observerCoracoes.observe(capituloFinalCoracoes);
+}
 
 // ===============================
 // 💌 CARTA
 // ===============================
 
 function abrirCarta() {
-  const envelope = document.querySelector(".envelope");
+  const envelopeCena = document.querySelector(".envelope-cena");
   const carta = document.querySelector(".carta-aberta");
 
-  if (envelope.classList.contains("abrindo")) {
+  if (envelopeCena.classList.contains("abrindo")) {
     return;
   }
 
@@ -42,10 +64,10 @@ function abrirCarta() {
     navigator.vibrate(35);
   }
 
-  envelope.classList.add("abrindo");
+  envelopeCena.classList.add("abrindo");
 
   setTimeout(() => {
-    envelope.style.display = "none";
+    envelopeCena.style.display = "none";
     carta.style.display = "block";
 
     setTimeout(() => {
