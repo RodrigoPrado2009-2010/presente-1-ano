@@ -350,6 +350,7 @@ header {
 }
 
 .envelope-cena {
+  position: relative;
   perspective: 1200px;
 }
 
@@ -368,9 +369,36 @@ header {
   transition: transform 0.6s ease, opacity 0.6s ease;
 }
 
-.envelope.abrindo {
+.envelope-cena.abrindo .envelope {
   transform: translateY(-40px) scale(0.92);
   opacity: 0;
+  transition-delay: 0.9s;
+}
+
+.carta-dentro {
+  position: absolute;
+  bottom: 22px;
+  left: 50%;
+  z-index: 2;
+
+  width: 78%;
+  height: 62%;
+
+  background: linear-gradient(160deg, #fffdf7, #f3ead0);
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+
+  opacity: 0;
+  transform: translate(-50%, 0) scale(0.85);
+  pointer-events: none;
+
+  transition: transform 0.6s ease, opacity 0.4s ease;
+}
+
+.envelope-cena.abrindo .carta-dentro {
+  opacity: 1;
+  transform: translate(-50%, -190px) scale(1.05);
+  transition-delay: 0.35s;
 }
 
 .aba {
@@ -383,6 +411,14 @@ header {
   border-right: 225px solid transparent;
   border-top: 150px solid #cfcfcf;
   filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.1));
+
+  z-index: 4;
+  transform-origin: top center;
+  transition: transform 0.5s ease;
+}
+
+.envelope-cena.abrindo .aba {
+  transform: rotateX(-180deg);
 }
 
 .envelope::before {
@@ -414,6 +450,14 @@ header {
     0 10px 25px rgba(0, 0, 0, 0.35),
     inset 0 5px 10px rgba(255, 255, 255, 0.5);
   z-index: 5;
+  transition:
+    transform 0.3s,
+    opacity 0.25s ease;
+}
+
+.envelope-cena.abrindo .selo {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.6);
 }
 
 .envelope:hover .selo {
@@ -1089,7 +1133,8 @@ header {
 
   /* Fundo mobile — única regra de background do body/html no celular */
   html {
-    background: url("Imagens/FundoMobile.png") center top / cover no-repeat fixed;
+    background: url("Imagens/FundoMobile.png") center top / cover no-repeat
+      fixed;
   }
 
   body {
@@ -1228,6 +1273,14 @@ header {
   .selo {
     width: 80px;
     height: 80px;
+  }
+
+  .carta-dentro {
+    bottom: 16px;
+  }
+
+  .envelope-cena.abrindo .carta-dentro {
+    transform: translate(-50%, -130px) scale(1.05);
   }
 
   .coracao-selo,
