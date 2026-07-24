@@ -78,6 +78,71 @@ function abrirCarta() {
 }
 
 // ===============================
+// 🎵 NOSSA MÚSICA
+// ===============================
+
+const audioMusica = document.getElementById("audioMusica");
+const botaoPlay = document.getElementById("botaoPlay");
+const barraMusica = document.getElementById("barraMusica");
+const tempoAtual = document.getElementById("tempoAtual");
+const tempoTotal = document.getElementById("tempoTotal");
+const playerCard = document.querySelector(".player-card");
+
+function formatarTempo(segundos) {
+  if (!isFinite(segundos) || isNaN(segundos)) return "0:00";
+
+  const min = Math.floor(segundos / 60);
+  const seg = Math.floor(segundos % 60)
+    .toString()
+    .padStart(2, "0");
+
+  return `${min}:${seg}`;
+}
+
+if (audioMusica && botaoPlay && barraMusica) {
+  audioMusica.addEventListener("loadedmetadata", () => {
+    barraMusica.max = audioMusica.duration;
+    tempoTotal.textContent = formatarTempo(audioMusica.duration);
+  });
+
+  botaoPlay.addEventListener("click", () => {
+    if (navigator.vibrate) {
+      navigator.vibrate(20);
+    }
+
+    if (audioMusica.paused) {
+      audioMusica.play().catch(() => {});
+    } else {
+      audioMusica.pause();
+    }
+  });
+
+  audioMusica.addEventListener("play", () => {
+    botaoPlay.textContent = "⏸️";
+    if (playerCard) playerCard.classList.add("tocando");
+  });
+
+  audioMusica.addEventListener("pause", () => {
+    botaoPlay.textContent = "▶️";
+    if (playerCard) playerCard.classList.remove("tocando");
+  });
+
+  audioMusica.addEventListener("ended", () => {
+    botaoPlay.textContent = "▶️";
+    if (playerCard) playerCard.classList.remove("tocando");
+  });
+
+  audioMusica.addEventListener("timeupdate", () => {
+    barraMusica.value = audioMusica.currentTime;
+    tempoAtual.textContent = formatarTempo(audioMusica.currentTime);
+  });
+
+  barraMusica.addEventListener("input", () => {
+    audioMusica.currentTime = barraMusica.value;
+  });
+}
+
+// ===============================
 // ❤️ CONTADOR
 // ===============================
 
