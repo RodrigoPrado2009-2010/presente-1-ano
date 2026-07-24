@@ -225,6 +225,43 @@
       </p>
     </section>
 
+    <section id="musica">
+      <h2>Nossa Música ❤️</h2>
+      <p class="subtitulo">A trilha sonora da Nossa história🤍</p>
+
+      <div class="player-card">
+        <img
+          class="player-capa"
+          src="Imagens/Logo.png"
+          alt="Capa da música"
+        />
+
+        <div class="player-info">
+          <h3 id="musicaTitulo">Can't Take My Eyes Off You</h3>
+          <p id="musicaArtista">Frankie Valli</p>
+        </div>
+
+        <button id="botaoPlay" aria-label="Tocar música">▶️</button>
+
+        <div class="player-progresso">
+          <span id="tempoAtual">0:00</span>
+
+          <input
+            type="range"
+            id="barraMusica"
+            value="0"
+            min="0"
+            max="100"
+            step="1"
+          />
+
+          <span id="tempoTotal">0:00</span>
+        </div>
+      </div>
+
+      <audio id="audioMusica" src="Imagens/musica.mp3" preload="metadata"></audio>
+    </section>
+
     <section id="motivos">
       <h2>365 dias.</h2>
 
