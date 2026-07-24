@@ -875,6 +875,48 @@ body.modo-escuro .carta-aberta p {
   color: #d8cfc0;
 }
 
+/* Nossa Música */
+body.modo-escuro #musica h2 {
+  color: #f2e4c4;
+}
+
+body.modo-escuro .player-card {
+  background: linear-gradient(160deg, #1c170f, #14110c);
+  border-color: rgba(212, 175, 55, 0.3);
+  box-shadow:
+    0 25px 50px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+body.modo-escuro .player-capa {
+  border-color: #1c170f;
+}
+
+body.modo-escuro .player-capa-wrap::after {
+  background: #1c170f;
+}
+
+body.modo-escuro .player-info h3 {
+  color: #f2e4c4;
+}
+
+body.modo-escuro .player-info p {
+  color: #d4af37;
+}
+
+body.modo-escuro .player-progresso {
+  color: #a79f92;
+}
+
+body.modo-escuro .player-progresso input[type="range"] {
+  background: rgba(212, 175, 55, 0.18);
+}
+
+body.modo-escuro .player-progresso input[type="range"]::-webkit-slider-thumb,
+body.modo-escuro .player-progresso input[type="range"]::-moz-range-thumb {
+  background: #1c170f;
+}
+
 /* Contador */
 body.modo-escuro #tempo h2 {
   color: #f2e4c4;
