@@ -533,6 +533,177 @@ header {
   left: 19px;
 }
 
+/* ==========================
+      NOSSA MÚSICA
+========================== */
+
+#musica {
+  padding: 100px 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+#musica h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 85px;
+  color: #2f2f2f;
+}
+
+.player-card {
+  position: relative;
+
+  width: 420px;
+  max-width: 100%;
+
+  margin-top: 40px;
+
+  padding: 35px;
+
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(10px);
+
+  border-radius: 26px;
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.player-capa {
+  width: 150px;
+  height: 150px;
+
+  object-fit: cover;
+  border-radius: 20px;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+
+  animation: girarCapa 18s linear infinite paused;
+}
+
+.player-card.tocando .player-capa {
+  animation-play-state: running;
+}
+
+@keyframes girarCapa {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.player-info {
+  margin-top: 20px;
+}
+
+.player-info h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 24px;
+  color: #2f2f2f;
+}
+
+.player-info p {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  color: #888;
+  margin-top: 5px;
+}
+
+#botaoPlay {
+  margin-top: 25px;
+
+  width: 68px;
+  height: 68px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: linear-gradient(135deg, #d4af37, #b8872d);
+
+  color: white;
+  font-size: 24px;
+
+  cursor: pointer;
+
+  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+
+  transition: 0.25s;
+}
+
+#botaoPlay:hover {
+  transform: scale(1.08);
+}
+
+#botaoPlay:active {
+  transform: scale(0.94);
+}
+
+.player-progresso {
+  width: 100%;
+  margin-top: 25px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  color: #888;
+}
+
+.player-progresso input[type="range"] {
+  flex: 1;
+
+  -webkit-appearance: none;
+  appearance: none;
+
+  height: 6px;
+  border-radius: 10px;
+
+  background: rgba(212, 175, 55, 0.25);
+
+  cursor: pointer;
+}
+
+.player-progresso input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+
+  width: 16px;
+  height: 16px;
+
+  border-radius: 50%;
+
+  background: #d4af37;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+
+  cursor: pointer;
+}
+
+.player-progresso input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #d4af37;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+
+  cursor: pointer;
+}
+
 #tempo {
   min-height: 100vh;
 
@@ -1310,6 +1481,26 @@ header {
   .carta-aberta p {
     font-size: 17px;
     line-height: 30px;
+  }
+
+  /* Nossa Música */
+
+  #musica {
+    padding: 60px 20px;
+  }
+
+  #musica h2 {
+    font-size: 55px;
+  }
+
+  .player-card {
+    width: 100%;
+    padding: 25px;
+  }
+
+  .player-capa {
+    width: 120px;
+    height: 120px;
   }
 
   /* Tempo */
