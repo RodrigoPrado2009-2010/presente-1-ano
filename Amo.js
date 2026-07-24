@@ -99,10 +99,19 @@ function formatarTempo(segundos) {
   return `${min}:${seg}`;
 }
 
+function atualizarPreenchimentoBarra() {
+  const max = Number(barraMusica.max) || 1;
+  const valor = Number(barraMusica.value) || 0;
+  const porcentagem = (valor / max) * 100;
+
+  barraMusica.style.background = `linear-gradient(to right, #d4af37 ${porcentagem}%, rgba(212, 175, 55, 0.22) ${porcentagem}%)`;
+}
+
 if (audioMusica && botaoPlay && barraMusica) {
   audioMusica.addEventListener("loadedmetadata", () => {
     barraMusica.max = audioMusica.duration;
     tempoTotal.textContent = formatarTempo(audioMusica.duration);
+    atualizarPreenchimentoBarra();
   });
 
   botaoPlay.addEventListener("click", () => {
@@ -118,27 +127,29 @@ if (audioMusica && botaoPlay && barraMusica) {
   });
 
   audioMusica.addEventListener("play", () => {
-    botaoPlay.textContent = "⏸️";
+    botaoPlay.classList.add("tocando");
     if (playerCard) playerCard.classList.add("tocando");
   });
 
   audioMusica.addEventListener("pause", () => {
-    botaoPlay.textContent = "▶️";
+    botaoPlay.classList.remove("tocando");
     if (playerCard) playerCard.classList.remove("tocando");
   });
 
   audioMusica.addEventListener("ended", () => {
-    botaoPlay.textContent = "▶️";
+    botaoPlay.classList.remove("tocando");
     if (playerCard) playerCard.classList.remove("tocando");
   });
 
   audioMusica.addEventListener("timeupdate", () => {
     barraMusica.value = audioMusica.currentTime;
     tempoAtual.textContent = formatarTempo(audioMusica.currentTime);
+    atualizarPreenchimentoBarra();
   });
 
   barraMusica.addEventListener("input", () => {
     audioMusica.currentTime = barraMusica.value;
+    atualizarPreenchimentoBarra();
   });
 }
 
