@@ -706,7 +706,7 @@ header {
   margin-left: 4px;
 }
 
-.barra {
+.icone-barra {
   display: none;
 
   position: absolute;
@@ -719,11 +719,11 @@ header {
   border-radius: 2px;
 }
 
-.barra:nth-child(2) {
+.icone-barra:nth-child(2) {
   left: 0;
 }
 
-.barra:nth-child(3) {
+.icone-barra:nth-child(3) {
   right: 0;
 }
 
@@ -731,7 +731,7 @@ header {
   display: none;
 }
 
-#botaoPlay.tocando .barra {
+#botaoPlay.tocando .icone-barra {
   display: block;
 }
 
