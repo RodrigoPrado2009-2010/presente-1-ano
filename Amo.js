@@ -505,7 +505,7 @@ const previewTrocaPersonagens = document.getElementById(
 
 const gifsOriginais = {
   opcaoBeijo: "Imagens/beiju.gif",
-  opcaoAbraco: "Imagens/abraço.gif",
+  opcaoAbraco: "Imagens/abraco.gif",
   opcaoDormindo: "Imagens/dormindo.gif",
 };
 
