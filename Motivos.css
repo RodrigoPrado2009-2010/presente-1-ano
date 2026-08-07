@@ -1,6 +1,4 @@
-/* ===================================
-        VOLTAR
-=================================== */
+
 
 .voltar {
   position: fixed;
@@ -29,9 +27,7 @@
   transform: translateY(-3px);
 }
 
-/* ===================================
-        CABEÇALHO DA PÁGINA
-=================================== */
+
 
 header.motivos-header {
   display: block;
@@ -53,9 +49,7 @@ header.motivos-header {
   font-family: "Poppins", sans-serif;
 }
 
-/* Reaproveita o #motivos já estilizado no Te.css,
-   só ajusta o espaçamento do topo já que aqui
-   não tem o resto do site antes dele */
+
 
 #motivos {
   padding-top: 20px;
@@ -149,11 +143,7 @@ header.motivos-header {
   }
 }
 
-/* ===================================
-        RESPONSIVO CELULAR
-        (fica por último de propósito,
-        pra sempre vencer as regras de cima)
-=================================== */
+
 
 @media (max-width: 768px) {
   .voltar {
@@ -199,9 +189,7 @@ header.motivos-header {
   }
 }
 
-/* ===================================
-        MODO ESCURO
-=================================== */
+
 
 @media (min-width: 769px) {
   body.modo-escuro {

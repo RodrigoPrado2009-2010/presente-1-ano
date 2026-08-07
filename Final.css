@@ -1,13 +1,9 @@
-/* ================================
-        CAPÍTULO FINAL
-================================ */
+
 
 #capitulo-final {
   background: #fff;
   padding: 120px 0 180px;
 }
-
-/* CAPÍTULO FINAL */
 
 .final-capitulo {
   min-height: 45vh;
@@ -23,8 +19,6 @@
   color: #9b7b42;
   text-transform: uppercase;
 }
-
-/* FRASES */
 
 .final-frase {
   min-height: 60vh;
@@ -44,8 +38,6 @@
   color: #333;
 }
 
-/* FOTO */
-
 .final-foto {
   min-height: 85vh;
 
@@ -62,8 +54,6 @@
 
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.18);
 }
-
-/* DATAS */
 
 .final-datas {
   min-height: 30vh;
@@ -84,8 +74,6 @@
   background: #d4af37;
 }
 
-/* TEXTO FINAL */
-
 .final-dias {
   min-height: 45vh;
 
@@ -102,8 +90,6 @@
   color: #555;
 }
 
-/* PRÓXIMO CAPÍTULO */
-
 .final-proximo {
   min-height: 45vh;
 
@@ -116,8 +102,6 @@
   font-size: 60px;
   color: #222;
 }
-
-/* LIVRO */
 
 .final-livro {
   min-height: 70vh;
@@ -175,8 +159,6 @@
   background: linear-gradient(90deg, #d4af37, #f3d36d, #d4af37);
 }
 
-/* BOTÃO */
-
 .final-virar {
   min-height: 40vh;
 
@@ -211,8 +193,6 @@
   box-shadow: 0 20px 45px rgba(212, 175, 55, 0.45);
 }
 
-/* ANIMAÇÃO */
-
 .final-reveal {
   opacity: 0;
 
@@ -227,16 +207,12 @@
   transform: translateY(0);
 }
 
-/* ===================================
-        RESPONSIVO CELULAR
-=================================== */
-
 @media (max-width: 768px) {
   #capitulo-final {
     padding: 70px 0 100px;
   }
 
-  /* Capítulo */
+  
 
   .final-capitulo {
     min-height: 30vh;
@@ -248,7 +224,7 @@
     text-align: center;
   }
 
-  /* Frases */
+  
 
   .final-frase {
     min-height: 40vh;
@@ -260,7 +236,7 @@
     line-height: 48px;
   }
 
-  /* Foto */
+  
 
   .final-foto {
     min-height: 55vh;
@@ -272,7 +248,7 @@
     border-radius: 18px;
   }
 
-  /* Datas */
+  
 
   .final-datas {
     flex-direction: column;
@@ -285,7 +261,7 @@
     width: 120px;
   }
 
-  /* Texto Final */
+  
 
   .final-dias {
     min-height: 35vh;
@@ -294,7 +270,7 @@
     padding: 20px;
   }
 
-  /* Próximo capítulo */
+  
 
   .final-proximo {
     min-height: 30vh;
@@ -305,7 +281,7 @@
     text-align: center;
   }
 
-  /* Livro */
+  
 
   .final-livro {
     min-height: 50vh;
@@ -331,7 +307,7 @@
     margin: 25px 0;
   }
 
-  /* Botão */
+  
 
   .final-virar {
     min-height: 25vh;
@@ -346,15 +322,12 @@
     font-size: 20px;
   }
 
-  /* Fade */
+  
 
   #futuro::after {
     height: 90px;
   }
 }
-/* ===========================
-          POPUP
-=========================== */
 
 .popup {
   position: fixed;
@@ -447,10 +420,6 @@
 #fecharPopup:hover {
   transform: scale(1.05);
 }
-
-/* ===========================
-     MENU DE CARINHOS
-=========================== */
 
 #menuCarinhos {
   display: none;
@@ -574,10 +543,6 @@
   transition-delay: 0.15s;
 }
 
-/* ===========================
-   OVERLAY DO BEIJO (GIF)
-=========================== */
-
 #overlayBeijo {
   position: fixed;
   inset: 0;
@@ -623,19 +588,10 @@
   opacity: 1;
 }
 
-/* ===========================
-     OPÇÃO DE CONFIGURAÇÕES
-     (dentro do leque)
-=========================== */
-
 #opcaoConfig {
   border-radius: 50%;
   border: 2px solid #b8872d;
 }
-
-/* ===========================
-   POPUP DE CONFIGURAÇÕES
-=========================== */
 
 .popup-config-conteudo {
   padding: 40px 30px;
@@ -805,10 +761,6 @@
   transform: scale(1.05);
 }
 
-/* ===============================
-        MODO ESCURO
-=============================== */
-
 body.modo-escuro {
   color: #d8cfc0;
 }
@@ -830,7 +782,6 @@ body.modo-escuro {
   }
 }
 
-/* Nossa história */
 body.modo-escuro .momento,
 body.modo-escuro #trajetoria p {
   background: rgba(25, 20, 12, 0.78);
@@ -849,7 +800,6 @@ body.modo-escuro #trajetoria h2 {
   color: #f2e4c4;
 }
 
-/* Carta */
 body.modo-escuro .titulo-carta {
   color: #f2e4c4;
 }
@@ -875,7 +825,6 @@ body.modo-escuro .carta-aberta p {
   color: #d8cfc0;
 }
 
-/* Nossa Música */
 body.modo-escuro #musica h2 {
   color: #f2e4c4;
 }
@@ -917,7 +866,6 @@ body.modo-escuro .player-progresso input[type="range"]::-moz-range-thumb {
   background: #1c170f;
 }
 
-/* Contador */
 body.modo-escuro #tempo h2 {
   color: #f2e4c4;
 }
@@ -934,7 +882,6 @@ body.modo-escuro .caixa p {
   color: #c7bfb0;
 }
 
-/* Nosso futuro */
 body.modo-escuro #futuro h2 {
   color: #f2e4c4;
 }
@@ -960,7 +907,6 @@ body.modo-escuro .frase-final {
   color: #f2e4c4;
 }
 
-/* 365 motivos (prévia) */
 body.modo-escuro #motivos h2 {
   color: #f2e4c4;
 }
@@ -982,7 +928,6 @@ body.modo-escuro #motivos::after {
   background: linear-gradient(to bottom, transparent, #0a0806);
 }
 
-/* Capítulo final */
 body.modo-escuro #capitulo-final {
   background: #0a0806;
 }
@@ -1014,7 +959,6 @@ body.modo-escuro .final-barra {
   background: #2a2a2a;
 }
 
-/* Popups (inclusive o de configurações) */
 body.modo-escuro .popup-conteudo {
   background: #14110c;
 }

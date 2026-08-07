@@ -1,6 +1,6 @@
-// ======================================
-// ELEMENTOS
-// ======================================
+
+
+
 
 const slider = document.getElementById("slider");
 const slides = document.querySelectorAll(".slide");
@@ -8,9 +8,9 @@ const indicadores = document.querySelectorAll(".indicadores span");
 
 let indice = 0;
 
-// ======================================
-// ATUALIZA SLIDER
-// ======================================
+
+
+
 
 function atualizarSlider(animacao = true) {
   slider.style.transition = animacao
@@ -28,9 +28,9 @@ function atualizarSlider(animacao = true) {
   });
 }
 
-// ======================================
-// NAVEGAÇÃO
-// ======================================
+
+
+
 
 function proximo() {
   if (indice < slides.length - 1) {
@@ -46,18 +46,18 @@ function anterior() {
   }
 }
 
-// ======================================
-// TECLADO
-// ======================================
+
+
+
 
 document.addEventListener("keydown", (e) => {
   if (e.key === "ArrowRight") proximo();
   if (e.key === "ArrowLeft") anterior();
 });
 
-// ======================================
-// TOUCH
-// ======================================
+
+
+
 
 let startX = 0;
 let currentX = 0;
@@ -99,9 +99,9 @@ slider.addEventListener("touchend", () => {
   atualizarSlider();
 });
 
-// ======================================
-// DRAG NO PC
-// ======================================
+
+
+
 
 let mouseDown = false;
 let mouseInicio = 0;
@@ -145,9 +145,9 @@ window.addEventListener("mouseup", () => {
   atualizarSlider();
 });
 
-// ======================================
-// INDICADORES
-// ======================================
+
+
+
 
 indicadores.forEach((item, i) => {
   item.addEventListener("click", () => {
@@ -156,23 +156,23 @@ indicadores.forEach((item, i) => {
   });
 });
 
-// ======================================
-// RESPONSIVO
-// ======================================
+
+
+
 
 window.addEventListener("resize", () => {
   atualizarSlider(false);
 });
 
-// ======================================
-// INICIAR
-// ======================================
+
+
+
 
 atualizarSlider(false);
 
-// ===============================
-// TRANSIÇÃO ENTRE PÁGINAS
-// ===============================
+
+
+
 
 const transition = document.querySelector(".page-transition");
 

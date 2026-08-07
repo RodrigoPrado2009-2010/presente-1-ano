@@ -1,6 +1,4 @@
-// ===============================
-// ❤️ CHUVA DE CORAÇÕES
-// ===============================
+
 
 const area = document.querySelector(".coracoes");
 
@@ -48,10 +46,6 @@ if (capituloFinalCoracoes) {
   observerCoracoes.observe(capituloFinalCoracoes);
 }
 
-// ===============================
-// 💌 CARTA
-// ===============================
-
 function abrirCarta() {
   const envelopeCena = document.querySelector(".envelope-cena");
   const carta = document.querySelector(".carta-aberta");
@@ -76,10 +70,6 @@ function abrirCarta() {
     }, 50);
   }, 1500);
 }
-
-// ===============================
-// 🎵 NOSSA MÚSICA
-// ===============================
 
 const audioMusica = document.getElementById("audioMusica");
 const botaoPlay = document.getElementById("botaoPlay");
@@ -153,10 +143,6 @@ if (audioMusica && botaoPlay && barraMusica) {
   });
 }
 
-// ===============================
-// ❤️ CONTADOR
-// ===============================
-
 const dataNamoro = new Date(2025, 8, 15, 0, 0, 0);
 
 function atualizarTempo() {
@@ -215,10 +201,6 @@ atualizarTempo();
 
 setInterval(atualizarTempo, 1000);
 
-// ===============================
-// 👉 CARROSSEL SWIPE - NOSSA HISTÓRIA
-// ===============================
-
 const linhaHistoria = document.querySelector("#historia .linha");
 const dotsHistoria = document.getElementById("dotsHistoria");
 
@@ -249,10 +231,6 @@ if (linhaHistoria && dotsHistoria) {
   cardsHistoria.forEach((card) => observerHistoria.observe(card));
 }
 
-// ===============================
-// ⏳ TOQUE NO CONTADOR
-// ===============================
-
 document.querySelectorAll(".caixa").forEach((caixa) => {
   const frase = caixa.dataset.frase;
   if (!frase) return;
@@ -280,10 +258,6 @@ document.querySelectorAll(".caixa").forEach((caixa) => {
   });
 });
 
-// ===============================
-// ⌨️ MÁQUINA DE ESCREVER (INÍCIO)
-// ===============================
-
 const texto = "Feliz 1 Ano\nde Namoro ❤️";
 
 const titulo = document.getElementById("titulo");
@@ -303,10 +277,6 @@ function escreverTitulo() {
     setTimeout(escreverTitulo, 100);
   }
 }
-
-// ===============================
-// 📖 CAPÍTULO FINAL
-// ===============================
 
 const reveals = document.querySelectorAll(".final-reveal");
 
@@ -337,10 +307,6 @@ function revelar() {
 }
 
 window.addEventListener("scroll", revelar);
-
-// ===============================
-// ❤️ MÁQUINA DE ESCREVER FINAL
-// ===============================
 
 const mensagem = `Esse site contou apenas
 
@@ -374,9 +340,6 @@ function escreverFinal() {
   }
 }
 
-// ===============================
-// 🎬 LOADING
-// ===============================
 let siteCarregado = false;
 let barraCompleta = false;
 const tela = document.getElementById("loading");
@@ -413,10 +376,6 @@ window.addEventListener("load", () => {
   finalizarLoading();
 });
 
-// ===============================
-// 💌 POPUP
-// ===============================
-
 const popup = document.getElementById("popupFinal");
 const abrir = document.getElementById("virarPagina");
 const fechar = document.getElementById("fecharPopup");
@@ -434,10 +393,6 @@ popup.addEventListener("click", (e) => {
     popup.classList.remove("ativo");
   }
 });
-
-// ===============================
-// 📊 BARRA DE CARREGAMENTO
-// ===============================
 
 const barra = document.querySelector(".progresso");
 const porcentagem = document.getElementById("porcentagem");
@@ -489,9 +444,6 @@ if (barra && porcentagem && textoLoading) {
     }
   }, 120);
 }
-// ===============================
-// 💌 MENU DE CARINHOS
-// ===============================
 
 const menuCarinhos = document.getElementById("menuCarinhos");
 const botaoMenuCarinhos = document.getElementById("botaoMenuCarinhos");
@@ -564,10 +516,6 @@ if (menuCarinhos && botaoMenuCarinhos && overlayBeijo && imgOverlayBeijo) {
     observerBeijo.observe(capituloFinal);
   }
 }
-
-// ===============================
-// ⚙️ CONFIGURAÇÕES - TROCAR PERSONAGENS
-// ===============================
 
 const opcaoConfig = document.getElementById("opcaoConfig");
 const popupConfig = document.getElementById("popupConfig");
@@ -671,10 +619,6 @@ if (
     }
   });
 }
-
-// ===============================
-// TRANSIÇÃO ENTRE PÁGINAS
-// ===============================
 
 const transition = document.querySelector(".page-transition");
 

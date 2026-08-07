@@ -1,6 +1,4 @@
-/* ===================================
-        VOLTAR
-=================================== */
+
 
 .voltar {
   position: fixed;
@@ -29,10 +27,6 @@
   transform: translateY(-3px);
 }
 
-/* ===================================
-        CABEÇALHO DA PÁGINA
-=================================== */
-
 header.trajetoria-header {
   display: block;
 
@@ -52,10 +46,6 @@ header.trajetoria-header {
   color: #666;
   font-family: "Poppins", sans-serif;
 }
-
-/* ===================================
-        TEXTO DE INTRODUÇÃO
-=================================== */
 
 #trajetoria-intro {
   display: flex;
@@ -80,10 +70,6 @@ header.trajetoria-header {
 
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
-
-/* ===================================
-        DIAS (cards)
-=================================== */
 
 #dias {
   position: relative;
@@ -162,10 +148,6 @@ header.trajetoria-header {
 
   font-family: "Cormorant Garamond", serif;
 }
-
-/* ===================================
-        INTRO (tela cheia)
-=================================== */
 
 #introTrajetoria {
   position: fixed;
@@ -255,12 +237,6 @@ header.trajetoria-header {
   }
 }
 
-/* ===================================
-        RESPONSIVO CELULAR
-        (fica por último de propósito,
-        pra sempre vencer as regras de cima)
-=================================== */
-
 @media (max-width: 768px) {
   .voltar {
     top: 15px;
@@ -315,10 +291,6 @@ header.trajetoria-header {
     font-size: 17px;
   }
 }
-
-/* ===================================
-        MODO ESCURO
-=================================== */
 
 @media (min-width: 769px) {
   body.modo-escuro {

@@ -533,10 +533,6 @@ header {
   left: 19px;
 }
 
-/* ==========================
-      NOSSA MÚSICA
-========================== */
-
 #musica {
   padding: 100px 20px;
 
@@ -1056,10 +1052,6 @@ header {
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
 
-/*==========================
-        LOADING
-===========================*/
-
 #loading {
   position: fixed;
   inset: 0;
@@ -1253,10 +1245,6 @@ header {
   font-weight: 600;
 }
 
-/* ==========================
-      365 MOTIVOS
-========================== */
-
 #motivos {
   position: relative;
 
@@ -1365,10 +1353,6 @@ header {
   font-family: "Cormorant Garamond", serif;
 }
 
-/* ===========================
-      BOTÃO GALERIA
-=========================== */
-
 .botao-galeria {
   position: relative;
   z-index: 2;
@@ -1391,10 +1375,6 @@ header {
   box-shadow: 0 18px 35px rgba(212, 175, 55, 0.45);
 }
 
-/* ==========================
-      TRANSIÇÃO ENTRE PÁGINAS
-========================== */
-
 .page-transition {
   position: fixed;
   inset: 0;
@@ -1409,10 +1389,6 @@ header {
   opacity: 1;
 }
 
-/* ===================================
-        RESPONSIVO CELULAR
-=================================== */
-
 @media (max-width: 768px) {
   html,
   body {
@@ -1421,7 +1397,7 @@ header {
     min-height: 100%;
   }
 
-  /* Fundo mobile — única regra de background do body/html no celular */
+  
   html {
     background: url("Imagens/FundoMobile.png") center top / cover no-repeat
       fixed;
@@ -1431,14 +1407,14 @@ header {
     background: transparent;
   }
 
-  /* Logo */
+  
 
   #logo {
     width: 180px;
     top: 20px;
   }
 
-  /* Tela inicial */
+  
 
   .texto {
     padding: 30px 20px;
@@ -1464,7 +1440,7 @@ header {
     font-size: 18px;
   }
 
-  /* Nossa História */
+  
 
   #historia {
     padding: 60px 20px;
@@ -1522,7 +1498,7 @@ header {
     width: 100%;
   }
 
-  /* Trajetória */
+  
 
   #trajetoria {
     padding: 60px 20px;
@@ -1537,7 +1513,7 @@ header {
     line-height: 30px;
   }
 
-  /* Carta */
+  
 
   .titulo-carta {
     font-size: 55px;
@@ -1602,7 +1578,7 @@ header {
     line-height: 30px;
   }
 
-  /* Nossa Música */
+  
 
   #musica {
     padding: 60px 20px;
@@ -1622,7 +1598,7 @@ header {
     height: 120px;
   }
 
-  /* Tempo */
+  
 
   #tempo h2 {
     font-size: 55px;
@@ -1649,7 +1625,7 @@ header {
     font-size: 15px;
   }
 
-  /* Futuro */
+  
 
   #futuro {
     padding: 60px 20px;
@@ -1677,7 +1653,7 @@ header {
     line-height: 42px;
   }
 
-  /* Motivos (365 dias) */
+  
 
   #motivos {
     padding: 60px 20px;
@@ -1710,7 +1686,7 @@ header {
     line-height: 30px;
   }
 
-  /* Loading */
+  
 
   .logo-loading {
     width: 130px;
