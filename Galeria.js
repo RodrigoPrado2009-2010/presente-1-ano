@@ -13,6 +13,11 @@ function atualizarSlider(animacao = true) {
 
   slides.forEach((slide, i) => {
     slide.classList.toggle("ativa", i === indice);
+
+    const video = slide.querySelector("video");
+    if (video && i !== indice) {
+      video.pause();
+    }
   });
 
   indicadores.forEach((item, i) => {
