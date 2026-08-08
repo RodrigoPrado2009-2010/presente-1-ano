@@ -1,5 +1,3 @@
-
-
 const area = document.querySelector(".coracoes");
 
 function criarCoracao() {
@@ -621,6 +619,12 @@ if (
 }
 
 const transition = document.querySelector(".page-transition");
+
+window.addEventListener("pageshow", (event) => {
+  if (event.persisted && transition) {
+    transition.classList.remove("ativa");
+  }
+});
 
 document.querySelectorAll("a[href]").forEach((link) => {
   const href = link.getAttribute("href");
