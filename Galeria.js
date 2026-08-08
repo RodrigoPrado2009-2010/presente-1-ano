@@ -1,16 +1,8 @@
-
-
-
-
 const slider = document.getElementById("slider");
 const slides = document.querySelectorAll(".slide");
 const indicadores = document.querySelectorAll(".indicadores span");
 
 let indice = 0;
-
-
-
-
 
 function atualizarSlider(animacao = true) {
   slider.style.transition = animacao
@@ -28,10 +20,6 @@ function atualizarSlider(animacao = true) {
   });
 }
 
-
-
-
-
 function proximo() {
   if (indice < slides.length - 1) {
     indice++;
@@ -46,18 +34,10 @@ function anterior() {
   }
 }
 
-
-
-
-
 document.addEventListener("keydown", (e) => {
   if (e.key === "ArrowRight") proximo();
   if (e.key === "ArrowLeft") anterior();
 });
-
-
-
-
 
 let startX = 0;
 let currentX = 0;
@@ -98,10 +78,6 @@ slider.addEventListener("touchend", () => {
 
   atualizarSlider();
 });
-
-
-
-
 
 let mouseDown = false;
 let mouseInicio = 0;
@@ -145,10 +121,6 @@ window.addEventListener("mouseup", () => {
   atualizarSlider();
 });
 
-
-
-
-
 indicadores.forEach((item, i) => {
   item.addEventListener("click", () => {
     indice = i;
@@ -156,25 +128,19 @@ indicadores.forEach((item, i) => {
   });
 });
 
-
-
-
-
 window.addEventListener("resize", () => {
   atualizarSlider(false);
 });
 
-
-
-
-
 atualizarSlider(false);
 
-
-
-
-
 const transition = document.querySelector(".page-transition");
+
+window.addEventListener("pageshow", (event) => {
+  if (event.persisted && transition) {
+    transition.classList.remove("ativa");
+  }
+});
 
 document.querySelectorAll("a[href]").forEach((link) => {
   const href = link.getAttribute("href");
